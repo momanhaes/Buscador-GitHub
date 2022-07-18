@@ -1,0 +1,60 @@
+@import "../../scss/includes.scss";
+
+.full-width-table {
+  width: 100%;
+
+  .profile-table {
+    @include start;
+
+    img {
+      width: 10%;
+      border-radius: 50%;
+    }
+  }
+
+  .mat-column-name {
+    width: 25%;
+  }
+
+  .mat-column-description {
+    width: 50%;
+  }
+
+  .mat-column-forks {
+    width: 10%;
+    padding-left: 8px;
+  }
+
+  .mat-column-language {
+    width: 10%;
+  }
+
+  .mat-column-url {
+    width: 5%;
+    cursor: pointer;
+  }
+}
+
+::ng-deep .mat-select-value {
+  color: $color-primary !important;
+}
+
+::ng-deep .mat-select-arrow {
+  color: $color-primary !important;
+}
+
+::ng-deep .mat-paginator-page-size {
+  align-items: center !important;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: $color-primary !important;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+  margin-bottom: 0rem !important;
+}
+
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: $color-primary !important;
+}
