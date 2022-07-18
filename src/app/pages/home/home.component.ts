@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit {
   public getUser(): void {
     this.userForm.valueChanges
       .pipe(
-        debounceTime(500),
+        debounceTime(1000),
         distinctUntilChanged(),
         switchMap((user) => {
           this.isUserLoading = true;
