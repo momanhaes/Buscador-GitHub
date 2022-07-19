@@ -1,6 +1,5 @@
 import Swal from 'sweetalert2';
-import { Subscription } from 'rxjs';
-import { Router } from '@angular/router';
+import { of, Subscription } from 'rxjs';
 import { ALERT_THEME } from 'src/app/utils/theme';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
@@ -40,7 +39,6 @@ export class HomeComponent implements OnInit {
   public state = 'ready';
 
   constructor(
-    private router: Router,
     private githubService: GithubService,
     private windowService: WindowService,
   ) { this.isMobile = window.innerWidth <= windowService.widthMobile; }
@@ -61,6 +59,11 @@ export class HomeComponent implements OnInit {
         debounceTime(1000),
         distinctUntilChanged(),
         switchMap((user) => {
+          if (!user.userControl.trim()) {
+            this.person = {} as IProfile;
+            return of(null);
+          }
+
           this.isUserLoading = true;
           this.user = user.userControl;
           return this.githubService.getUser(this.user);
@@ -72,7 +75,7 @@ export class HomeComponent implements OnInit {
 
             Swal.fire({
               title: 'Ops!',
-              text: `Não foi encontrado um perfil para '${this.user}'`,
+              text: this.user ? `Não foi encontrado um perfil para '${this.user}'` : 'Erro',
               icon: 'error',
               background: this.alertTheme.background,
               iconColor: this.alertTheme.iconColor,

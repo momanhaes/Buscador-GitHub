@@ -48,7 +48,7 @@
                 </div>
             </div>
 
-            <div class="profile" *ngIf="person.id && !isUserLoading && !isRepo">
+            <div class="profile" *ngIf="person?.id && !isUserLoading && !isRepo">
                 <app-profile 
                     [profile]="person"
                     [isLoading]="isRepoLoading" 
