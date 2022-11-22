@@ -9,7 +9,6 @@
         margin-top: 32px;
 
         .content {
-            @include start;
             padding: 64px;
             border-radius: 0.8rem;
             margin: 24px 0 24px 0;
@@ -22,15 +21,7 @@
             }
 
             i {
-                font-size: 55px;
-            }
-
-            h1 {
-                margin: 0 0 4px;
-            }
-
-            p {
-                margin: 0;
+                font-size: 18px;
             }
         }
     }

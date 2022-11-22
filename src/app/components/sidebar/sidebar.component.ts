@@ -1,15 +1,15 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { WindowService } from 'src/app/services/window.service';
 import { APPEARD } from 'src/app/animations/appeard.animation';
+import { WindowService } from 'src/app/services/window.service';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  selector: 'app-sidebar',
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.scss'],
   animations: [APPEARD],
 })
-export class HeaderComponent implements OnInit {
+export class SidebarComponent implements OnInit {
   @HostListener('window:scroll') onScrollEvent() {
     this.scrolled = true;
 

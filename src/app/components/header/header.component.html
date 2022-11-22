@@ -1,12 +1,12 @@
-<div class="root">
+<div class="root" *ngIf="isMobile || scrolled" [@appeard]="state">
   <nav class="navbar">
     <div class="container-fluid">
       <div class="content">
-        <i class="fa fa-github-square mr-2"></i>
+        <i class="fa fa-pencil-square mr-2"></i>
         <div>
-          <span>Buscador de Usuários</span>
+          <span>Styleguide</span>
           <br>
-          <span>Powered by GitHub API</span>
+          <span>Desenvolvido por Matheus Manhães</span>
         </div>
       </div>
     </div>

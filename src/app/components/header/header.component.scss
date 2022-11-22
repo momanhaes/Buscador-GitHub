@@ -1,6 +1,12 @@
 @import "../../scss/includes.scss";
 
 .root {
+  @include large-and-up {
+    @include z-index("space");
+    position: fixed;
+    width: 100%;
+  }
+
   nav {
     @include z-index("space");
     background: $color-background;

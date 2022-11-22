@@ -8,14 +8,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // DECLARATIONS
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
 import { ResizeDirective } from './directives/resize.directive';
 import { TableComponent } from './components/table/table.component';
 import { InputComponent } from './components/input/input.component';
 import { HeaderComponent } from './components/header/header.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ButtonComponent } from './components/button/button.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+
+// PAGES
+import { InputPageComponent } from './pages/input-page/input-page.component';
+import { ButtonsPageComponent } from './pages/buttons-page/buttons-page.component';
+import { TablesPageComponent } from './pages/tables-page/tables-page.component';
+import { ItemsPageComponent } from './pages/items-page/items-page.component';
+import { IconsPageComponent } from './pages/icons-page/icons-page.component';
+import { DirectivesPageComponent } from './pages/directives-page/directives-page.component';
+import { ServicesPageComponent } from './pages/services-page/services-page.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { GitHubSearchComponent } from './pages/gh-search/gh-search.component';
+import { HomeComponent } from './pages/home/home.component';
 
 // MATERIAL IMPORTS
 import { MatSortModule } from '@angular/material/sort';
@@ -49,9 +61,9 @@ const PROVIDERS = [
 
 const DECLARATIONS = [
   AppComponent,
-  HomeComponent,
   FooterComponent,
   HeaderComponent,
+  SidebarComponent,
   ButtonComponent,
   InputComponent,
   SpinnerComponent,
@@ -59,7 +71,20 @@ const DECLARATIONS = [
   TableComponent,
   ListComponent,
   ItemComponent,
-  ResizeDirective,
+  ResizeDirective
+];
+
+const PAGES = [
+  GitHubSearchComponent,
+  NotFoundComponent,
+  HomeComponent,
+  InputPageComponent,
+  ButtonsPageComponent,
+  TablesPageComponent,
+  ItemsPageComponent,
+  IconsPageComponent,
+  DirectivesPageComponent,
+  ServicesPageComponent
 ];
 
 const ANGULAR_MODULES = [
@@ -85,7 +110,7 @@ const MATERIAL_MODULES = [
 ];
 
 @NgModule({
-  declarations: [...DECLARATIONS],
+  declarations: [...DECLARATIONS, ...PAGES],
   imports: [...ANGULAR_MODULES, ...MATERIAL_MODULES],
   providers: [...PROVIDERS],
   bootstrap: [AppComponent],
