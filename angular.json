@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "repo-search": {
+    "styleguide": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/repo-search",
+            "outputPath": "dist/styleguide",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -75,18 +75,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "repo-search:build"
+            "browserTarget": "styleguide:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "repo-search:build:production"
+              "browserTarget": "styleguide:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "repo-search:build"
+            "browserTarget": "styleguide:build"
           }
         },
         "test": {
@@ -125,18 +125,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "repo-search:serve"
+            "devServerTarget": "styleguide:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "repo-search:serve:production"
+              "devServerTarget": "styleguide:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "repo-search",
+  "defaultProject": "styleguide",
   "cli": {
     "analytics": "1895cdef-2ee1-4221-86b6-072bb899d28d"
   }
