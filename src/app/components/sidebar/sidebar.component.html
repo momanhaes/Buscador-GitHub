@@ -1,51 +1,9 @@
-<nav class="main-menu" *ngIf="!isMobile && !scrolled" [@appeard]="state">
-  <ul>
-    <li routerLinkActive="li-highlight">
-      <a routerLink="/home" routerLinkActive="text-highlight">
-        <i class="fa fa-home fa-2x"></i>
-        <span class="nav-text"> Início </span>
-      </a>
-    </li>
-    <li routerLinkActive="li-highlight">
-      <a routerLink="/inputs" routerLinkActive="text-highlight">
-        <i class="fa fa-keyboard-o fa-2x"></i>
-        <span class="nav-text"> Inputs </span>
-      </a>
-    </li>
-    <li routerLinkActive="li-highlight">
-      <a routerLink="/buttons" routerLinkActive="text-highlight">
-        <i class="fa fa-toggle-off fa-2x"></i>
-        <span class="nav-text"> Buttons </span>
-      </a>
-    </li>
-    <li routerLinkActive="li-highlight">
-      <a routerLink="/tables" routerLinkActive="text-highlight">
-        <i class="fa fa-table fa-2x"></i>
-        <span class="nav-text"> Tables </span>
-      </a>
-    </li>
-    <li routerLinkActive="li-highlight">
-      <a routerLink="/items" routerLinkActive="text-highlight">
-        <i class="fa fa-server fa-2x"></i>
-        <span class="nav-text"> Items </span>
-      </a>
-    </li>
-    <li routerLinkActive="li-highlight">
-      <a routerLink="/icons" routerLinkActive="text-highlight">
-        <i class="fa fa-smile-o fa-2x"></i>
-        <span class="nav-text"> Icons </span>
-      </a>
-    </li>
-    <li routerLinkActive="li-highlight">
-      <a routerLink="/directives" routerLinkActive="text-highlight">
-        <i class="fa fa-arrows-alt fa-2x"></i>
-        <span class="nav-text"> Directives </span>
-      </a>
-    </li>
-    <li routerLinkActive="li-highlight">
-      <a routerLink="/services" routerLinkActive="text-highlight">
-        <i class="fa fa-cogs fa-2x"></i>
-        <span class="nav-text"> Services </span>
+<nav class="main-menu" *ngIf="!isMobile && !scrolled">
+  <ul [@listAnimation]="content.length">
+    <li *ngFor="let item of content" routerLinkActive="li-highlight">
+      <a [routerLink]="item.router" routerLinkActive="text-highlight">
+        <i [class]="item.icon"></i>
+        <span class="nav-text">{{ item.label }}</span>
       </a>
     </li>
   </ul>

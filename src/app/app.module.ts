@@ -16,18 +16,31 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ButtonComponent } from './components/button/button.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { ToastyComponent } from './components/toasty/toasty.component';
+import { ToastyListComponent } from './components/toasty-list/toasty-list.component';
 
 // PAGES
+import { HomeComponent } from './pages/home/home.component';
+import { TypographyPageComponent } from './pages/typography-page/typography-page.component';
+import { ColorsPageComponent } from './pages/colors-page/colors-page.component';
 import { InputPageComponent } from './pages/input-page/input-page.component';
 import { ButtonsPageComponent } from './pages/buttons-page/buttons-page.component';
 import { TablesPageComponent } from './pages/tables-page/tables-page.component';
 import { ItemsPageComponent } from './pages/items-page/items-page.component';
 import { IconsPageComponent } from './pages/icons-page/icons-page.component';
+import { PipesPageComponent } from './pages/pipes-page/pipes-page.component';
 import { DirectivesPageComponent } from './pages/directives-page/directives-page.component';
 import { ServicesPageComponent } from './pages/services-page/services-page.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { GitHubSearchComponent } from './pages/gh-search/gh-search.component';
-import { HomeComponent } from './pages/home/home.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+
+// PIPES
+import { AccountPipe } from './pipes/account.pipe';
+import { CnpjPipe } from './pipes/cnpj.pipe';
+import { CpfPipe } from './pipes/cpf.pipe';
+import { CepPipe } from './pipes/cep.pipe';
+import { CelWithDDDPipe } from './pipes/cel.pipe';
+import { TelWithDDDPipe } from './pipes/tel.pipe';
 
 // MATERIAL IMPORTS
 import { MatSortModule } from '@angular/material/sort';
@@ -71,20 +84,34 @@ const DECLARATIONS = [
   TableComponent,
   ListComponent,
   ItemComponent,
-  ResizeDirective
+  ResizeDirective,
+  ToastyComponent,
+  ToastyListComponent,
 ];
 
 const PAGES = [
-  GitHubSearchComponent,
-  NotFoundComponent,
   HomeComponent,
+  TypographyPageComponent,
+  ColorsPageComponent,
   InputPageComponent,
   ButtonsPageComponent,
   TablesPageComponent,
   ItemsPageComponent,
   IconsPageComponent,
+  PipesPageComponent,
   DirectivesPageComponent,
-  ServicesPageComponent
+  ServicesPageComponent,
+  GitHubSearchComponent,
+  NotFoundComponent,
+];
+
+const PIPES = [
+  CpfPipe,
+  CnpjPipe,
+  AccountPipe,
+  CepPipe,
+  CelWithDDDPipe,
+  TelWithDDDPipe,
 ];
 
 const ANGULAR_MODULES = [
@@ -110,7 +137,7 @@ const MATERIAL_MODULES = [
 ];
 
 @NgModule({
-  declarations: [...DECLARATIONS, ...PAGES],
+  declarations: [...DECLARATIONS, ...PAGES, ...PIPES],
   imports: [...ANGULAR_MODULES, ...MATERIAL_MODULES],
   providers: [...PROVIDERS],
   bootstrap: [AppComponent],

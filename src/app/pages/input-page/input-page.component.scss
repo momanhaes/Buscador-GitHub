@@ -16,12 +16,37 @@
             background: $color-background;
             box-shadow: 2px 4px 8px 0 $color-shadow;
 
+            .text {
+                margin-bottom: 1rem;
+
+                .title {
+                    font-weight: bold;
+                    color: $color-primary;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.075);
+                }
+            }
+
+            .label {
+                @include start;
+                font-weight: bold;
+                margin-bottom: 5px;
+                color: $color-primary;
+            }
+
             @include large-and-down {
                 padding: 32px;
             }
 
             i {
                 font-size: 18px;
+            }
+
+            pre {
+                margin: 12px 0 0 0;
+                white-space: inherit;
+                background: $color-grey-bg;
+                padding: 15px;
+                border-radius: 3px;
             }
         }
     }

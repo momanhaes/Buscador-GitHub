@@ -1,13 +1,15 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { LIST_ANIMATION_LATERAL } from 'src/app/animations/list.animation';
 import { APPEARD } from 'src/app/animations/appeard.animation';
 import { WindowService } from 'src/app/services/window.service';
+import { IContent, SIDEBAR_CONTENT } from './sidebar.content';
 import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
-  animations: [APPEARD],
+  animations: [APPEARD, LIST_ANIMATION_LATERAL],
 })
 export class SidebarComponent implements OnInit {
   @HostListener('window:scroll') onScrollEvent() {
@@ -20,6 +22,7 @@ export class SidebarComponent implements OnInit {
 
   public subscribeMobile!: Subscription;
   public scrolled: boolean = false;
+  public content: IContent[] = [];
   public isMobile!: boolean;
   public state = 'ready';
 
@@ -31,5 +34,11 @@ export class SidebarComponent implements OnInit {
     this.subscribeMobile = this.windowService.hasMobile.subscribe(
       (hasMobile: boolean) => (this.isMobile = hasMobile)
     );
+
+    this.getContent();
+  }
+
+  getContent(): IContent[] {
+    return this.content = SIDEBAR_CONTENT;
   }
 }

@@ -14,7 +14,7 @@ export class ItemComponent {
   @Input() isIcon: boolean = false;
   @Input() labelFontSize: IValidSizes = 'small';
   @Input() valueFontSize: IValidSizes = 'medium';
-  @Input() type: 'standart' | 'currency' = 'standart';
+  @Input() type: string = 'standard';
 
   constructor() {}
 }

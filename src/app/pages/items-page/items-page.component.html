@@ -1,9 +1,21 @@
-<div class="root">
+<div class="root" [@appeard]="state">
   <div class="container">
-    <div class="content" [@appeard]="state">
+    <div class="content">
       <div class="text">
-        <h1>Items</h1>
+        <h1 class="title">Items</h1>
         <p>Abaixo os itens (label + value) disponíveis</p>
+      </div>
+
+      <div *ngIf="show" [@listAnimation]="items.length">
+        <ng-container *ngFor="let item of items">
+          <div class="container-item">
+            <app-item 
+              [label]="item.label" 
+              [value]="item.value" 
+              [type]="item.type">
+            </app-item>
+          </div>
+        </ng-container>
       </div>
     </div>
   </div>

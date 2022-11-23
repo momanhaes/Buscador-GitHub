@@ -12,7 +12,7 @@
   overflow: hidden;
   -webkit-transition: width 0.1s linear;
   transition: width 0.1s linear;
-  z-index: 1000;
+  z-index: 100000;
 }
 
 .main-menu > ul {
@@ -78,13 +78,13 @@ nav.main-menu.expanded {
 }
 
 .li-highlight {
-  background-color: $color-primary;
+  background-color: $color-grey-bg;
 }
 
 .text-highlight {
   i,
   span {
-    color: $color-secondary !important;
+    color: $color-primary !important;
     font-weight: bold;
   }
 }
@@ -113,8 +113,8 @@ nav.main-menu li.active > a,
 .dropdown-menu > .active > a:focus,
 .no-touch .dashboard-page nav.dashboard-menu ul li:hover a,
 .dashboard-page nav.dashboard-menu ul li.active a {
-  background-color: $color-primary;
-  color: $color-secondary !important;
+  background-color: $color-grey-bg;
+  color: $color-primary !important;
   font-weight: bold;
 }
 

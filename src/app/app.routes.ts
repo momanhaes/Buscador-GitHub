@@ -9,6 +9,9 @@ import { ItemsPageComponent } from './pages/items-page/items-page.component';
 import { IconsPageComponent } from './pages/icons-page/icons-page.component';
 import { DirectivesPageComponent } from './pages/directives-page/directives-page.component';
 import { ServicesPageComponent } from './pages/services-page/services-page.component';
+import { ColorsPageComponent } from './pages/colors-page/colors-page.component';
+import { TypographyPageComponent } from './pages/typography-page/typography-page.component';
+import { PipesPageComponent } from './pages/pipes-page/pipes-page.component';
 
 export const ROUTES: Routes = [
   {
@@ -20,6 +23,16 @@ export const ROUTES: Routes = [
     path: 'home',
     component: HomeComponent,
     data: { title: 'Página Inicial' },
+  },
+  {
+    path: 'typography',
+    component: TypographyPageComponent,
+    data: { title: 'Tipografia' },
+  },
+  {
+    path: 'colors',
+    component: ColorsPageComponent,
+    data: { title: 'Cores' },
   },
   {
     path: 'inputs',
@@ -45,6 +58,11 @@ export const ROUTES: Routes = [
     path: 'icons',
     component: IconsPageComponent,
     data: { title: 'Ícones' },
+  },
+  {
+    path: 'pipes',
+    component: PipesPageComponent,
+    data: { title: 'Pipes' },
   },
   {
     path: 'directives',

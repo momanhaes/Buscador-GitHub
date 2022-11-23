@@ -2,8 +2,27 @@
   <div class="container">
     <div class="content" [@appeard]="state">
       <div class="text">
-        <h1>Inputs</h1>
+        <h1 class="title">Inputs</h1>
         <p>Abaixo os inputs disponíveis</p>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="label">Texto</div>
+
+          <app-input 
+            [form]="form" 
+            label="Padrão" 
+            type="text" 
+            control="default" 
+            [required]="false"
+            placeholder="Input padrão">
+          </app-input>
+
+          <pre>
+            {{ getCode('input') }}
+          </pre>
+        </div>
       </div>
     </div>
   </div>

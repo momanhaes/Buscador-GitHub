@@ -7,7 +7,7 @@
   position: relative;
   border-radius: 20px;
   background: $color-background;
-  border: 1px solid rgba($color-terciery, 0.1) !important;
+  border: 1px solid rgba($color-grey, 0.1) !important;
 
   @include large-and-down {
     height: 500px;
@@ -21,7 +21,7 @@
     height: 100%;
     position: absolute;
     transition: 0.5s ease-in-out;
-    background: $color-secondary;
+    background: $color-grey-bg;
     clip-path: circle(420px at 80% 20%);
 
     @include large-and-down {

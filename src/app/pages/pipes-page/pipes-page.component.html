@@ -1,0 +1,29 @@
+<div class="root" [@appeard]="state">
+  <div class="container">
+    <div class="content">
+      <div class="text">
+        <h1 class="title">Pipes</h1>
+        <p>Abaixo os pipes disponíveis</p>
+      </div>
+
+      <div *ngIf="show" [@listAnimation]="pipes.length">
+        <ng-container *ngFor="let pipe of pipes">
+          <h4 class="label">{{ pipe.name }}</h4>
+
+          <div>
+            <p *ngIf="pipe.type === 'cpf'">{{ pipe.value | cpf }}</p>
+            <p *ngIf="pipe.type === 'cnpj'">{{ pipe.value | cnpj }}</p>
+            <p *ngIf="pipe.type === 'currency'">{{ pipe.value | currency: "BRL":"symbol" }}</p>
+            <p *ngIf="pipe.type === 'date'">{{ pipe.value | date:"MM/dd/yyyy" }}</p>
+            <p *ngIf="pipe.type === 'percent'">{{ pipe.value | percent }}</p>
+            <p *ngIf="pipe.type === 'account'">{{ pipe.value | account }}</p>
+            <p *ngIf="pipe.type === 'cep'">{{ pipe.value | cep }}</p>
+            <p *ngIf="pipe.type === 'cel'">{{ pipe.value | cel }}</p>
+            <p *ngIf="pipe.type === 'tel'">{{ pipe.value | tel }}</p>
+            <pre>{{ pipe.usage }}</pre>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

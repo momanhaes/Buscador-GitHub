@@ -1,0 +1,59 @@
+<div class="root">
+  <div class="container">
+    <div class="content" [@appeard]="state">
+      <div class="text">
+        <h1 class="title">Typograph</h1>
+        <p>Abaixo os textos disponíveis</p>
+      </div>
+
+      <div class="row" *ngIf="show" [@listAnimation]="typograph.length">
+        <div class="col-12" *ngFor="let item of typograph">
+          <ng-container *ngIf="item.name === 'Título'">
+            <h1 class="title">{{ item.name }}</h1>
+            <pre>{{ item.code }}</pre>
+          </ng-container>
+          
+          <ng-container *ngIf="item.name === 'H1'">
+            <h1>{{ item.name }}</h1>
+            <pre>{{ item.code }}</pre>
+          </ng-container>
+
+          <ng-container *ngIf="item.name === 'H2'">
+            <h2>{{ item.name }}</h2>
+            <pre>{{ item.code }}</pre>
+          </ng-container>
+
+          <ng-container *ngIf="item.name === 'H3'">
+            <h3>{{ item.name }}</h3>
+            <pre>{{ item.code }}</pre>
+          </ng-container>
+
+          <ng-container *ngIf="item.name === 'H4'">
+            <h4>{{ item.name }}</h4>
+            <pre>{{ item.code }}</pre>
+          </ng-container>
+
+          <ng-container *ngIf="item.name === 'H5'">
+            <h5>{{ item.name }}</h5>
+            <pre>{{ item.code }}</pre>
+          </ng-container>
+
+          <ng-container *ngIf="item.name === 'H6'">
+            <h6>{{ item.name }}</h6>
+            <pre>{{ item.code }}</pre>
+          </ng-container>
+
+          <ng-container *ngIf="item.name === 'Demonstração'">
+            <span>{{ item.name }}</span>
+            <pre>{{ item.code }}</pre>
+          </ng-container>
+
+          <ng-container *ngIf="item.name === 'Parágrafo'">
+            <p>{{ item.name }}</p>
+            <pre>{{ item.code }}</pre>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
