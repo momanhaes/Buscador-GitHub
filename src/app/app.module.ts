@@ -1,10 +1,12 @@
 // ANGLAR IMPORTS
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
 
 // DECLARATIONS
 import { AppComponent } from './app.component';
@@ -66,7 +68,11 @@ import { ProfileComponent } from './components/profile/profile.component';
 // INTERNAL IMPORTS
 import { ROUTES } from './app.routes';
 
+// LOCALE DEFINITIONS
+registerLocaleData(localePt, 'pt');
+
 const PROVIDERS = [
+  { provide: LOCALE_ID, useValue: 'pt' },
   NotificationService,
   WindowService,
   GithubService

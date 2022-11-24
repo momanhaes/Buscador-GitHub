@@ -1,30 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { APPEARD } from 'src/app/animations/appeard.animation';
+import { LIST_ANIMATION_LATERAL } from 'src/app/animations/list.animation';
+import { IInput, INPUTS } from './input-page.content';
 
 @Component({
   selector: 'app-input-page',
   templateUrl: './input-page.component.html',
   styleUrls: ['./input-page.component.scss'],
-  animations: [APPEARD],
+  animations: [APPEARD, LIST_ANIMATION_LATERAL],
 })
 export class InputPageComponent implements OnInit {
   public form!: FormGroup;
   public state = 'ready';
+  public show!: boolean;
 
   constructor() {}
 
-  ngOnInit() {
-    this.form = new FormGroup({ default: new FormControl('') });
+  public get inputs(): IInput[] {
+    return INPUTS;
   }
 
-  getCode(origin: string): string {
-    switch (origin) {
-      case 'input':
-        return '<app-input [form]="form" label="Padrão" type="text" control="default" [required]="false" placeholder="Input padrão"></app-input>';
+  ngOnInit() {
+    this.form = new FormGroup({
+      appInput: new FormControl(''),
+    });
 
-      default:
-        return '';
-    }
+    setTimeout(() => {
+      this.show = true;
+    }, 0);
   }
 }

@@ -1,13 +1,14 @@
 <div class="root" [@appeard]="state">
   <div class="container">
     <div class="content">
+
       <div class="text">
         <h1 class="title">Items</h1>
-        <p>Abaixo os itens (label + value) disponíveis</p>
+        <p>Abaixo os itens (label + value)</p>
       </div>
 
-      <div *ngIf="show" [@listAnimation]="items.length">
-        <ng-container *ngFor="let item of items">
+      <div class="row" *ngIf="show" [@listAnimation]="items.length">
+        <div class="col-12" *ngFor="let item of items">
           <div class="container-item">
             <app-item 
               [label]="item.label" 
@@ -15,8 +16,9 @@
               [type]="item.type">
             </app-item>
           </div>
-        </ng-container>
+        </div>
       </div>
+      
     </div>
   </div>
 </div>

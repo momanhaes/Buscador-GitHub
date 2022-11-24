@@ -11,6 +11,7 @@ import { COLORS, IColors } from './colors-page.content';
   animations: [APPEARD, LIST_ANIMATION_LATERAL],
 })
 export class ColorsPageComponent implements OnInit {
+  public state: string = 'ready';
   public show!: boolean;
 
   constructor(private toasty: ToastyService) {}

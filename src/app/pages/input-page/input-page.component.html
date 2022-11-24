@@ -1,29 +1,32 @@
-<div class="root">
+<div class="root" [@appeard]="state">
   <div class="container">
-    <div class="content" [@appeard]="state">
+    <div class="content">
+
       <div class="text">
         <h1 class="title">Inputs</h1>
-        <p>Abaixo os inputs disponíveis</p>
+        <p>Abaixo os inputs</p>
       </div>
 
-      <div class="row">
-        <div class="col-12">
-          <div class="label">Texto</div>
+      <div class="row" *ngIf="show" [@listAnimation]="inputs.length">
+        <div class="col-12" *ngFor="let item of inputs">
 
-          <app-input 
-            [form]="form" 
-            label="Padrão" 
-            type="text" 
-            control="default" 
-            [required]="false"
-            placeholder="Input padrão">
-          </app-input>
+          <ng-container *ngIf="item.name === 'Standard'">
+            <div class="label">{{ item.name }}</div>
 
-          <pre>
-            {{ getCode('input') }}
-          </pre>
+            <app-input 
+              type="text" 
+              [form]="form" 
+              label="Padrão" 
+              [required]="false"
+              [control]="item.control" 
+              placeholder="Input padrão">
+            </app-input>
+
+            <pre>{{ item.code }}</pre>
+          </ng-container>
         </div>
       </div>
+
     </div>
   </div>
 </div>

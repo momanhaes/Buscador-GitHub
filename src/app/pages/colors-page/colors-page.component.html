@@ -1,20 +1,22 @@
-<div class="root" [@appeard]="'ready'">
+<div class="root" [@appeard]="state">
   <div class="container">
     <div class="content">
+
       <div class="text">
         <h1 class="title">Colors</h1>
         <p>Abaixo a paleta de cores disponível</p>
       </div>
 
-      <div *ngIf="show" [@listAnimation]="colors.length">
-        <ng-container *ngFor="let color of colors">
+      <div class="row" *ngIf="show" [@listAnimation]="colors.length">
+        <div class="col-12" *ngFor="let color of colors">
           <div (click)="clip(color)" class="container-color">
             <div class="color" [ngClass]="color.name"></div>
             <h4 class="name">{{ color.name }}</h4>
             <span class="hex">{{ color.hex }}</span>
           </div>
-        </ng-container>
+        </div>
       </div>
+
     </div>
   </div>
 </div>
