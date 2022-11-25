@@ -22,7 +22,6 @@ export class SidebarComponent implements OnInit {
 
   public subscribeMobile!: Subscription;
   public scrolled: boolean = false;
-  public content: IContent[] = [];
   public isMobile!: boolean;
   public state = 'ready';
 
@@ -30,15 +29,13 @@ export class SidebarComponent implements OnInit {
     this.isMobile = window.innerWidth <= windowService.widthMobile;
   }
 
+  public get content(): IContent[] {
+    return SIDEBAR_CONTENT;
+  }
+
   ngOnInit() {
     this.subscribeMobile = this.windowService.hasMobile.subscribe(
       (hasMobile: boolean) => (this.isMobile = hasMobile)
     );
-
-    this.getContent();
-  }
-
-  getContent(): IContent[] {
-    return this.content = SIDEBAR_CONTENT;
   }
 }

@@ -11,19 +11,31 @@
     @include z-index("space");
     background: $color-background;
     box-shadow: 0 1px 15px $color-shadow;
-    height: 70px;
+    height: 60px;
 
     .content {
       @include start;
-      cursor: default;
 
-      transition: transform 0.2s;
-      transform: scale(1);
+      .link {
+        @include start;
+        cursor: pointer;
+        margin-right: 1.5rem;
 
-      @include large-and-up {
-        &:hover {
-          transform: scale(1.1);
-          @include z-index("sky");
+        transition: transform 0.2s;
+        transform: scale(1);
+
+        @include large-and-up {
+          &:hover {
+            @include z-index("sky");
+            transform: scale(1.1);
+            color: $color-primary;
+            font-weight: bold;
+          }
+        }
+
+        i {
+          font-size: 20px;
+          margin-right: 0.5rem;
         }
       }
     }
@@ -35,17 +47,10 @@
       text-decoration: none;
       cursor: default;
     }
+  }
 
-    i {
-      font-size: 42px;
-    }
-
-    span {
-      font-size: 13px;
-
-      &:first-child {
-        font-size: 16px;
-      }
-    }
+  .highlight {
+    color: $color-primary;
+    font-weight: bold;
   }
 }

@@ -1,13 +1,20 @@
-<div class="root" *ngIf="isMobile || scrolled" [@appeard]="state">
+<div class="root" *ngIf="isMobile || scrolled" [@listAnimation]="content.length">
   <nav class="navbar">
     <div class="container-fluid">
-      <div class="content">
-        <i class="fa fa-pencil-square mr-2"></i>
-        <div>
+      <div class="content" *ngIf="isMobile">
+        <div class="link">
+          <i class="fa fa-pencil-square mr-2"></i>
           <span>Styleguide</span>
-          <br>
-          <span>Desenvolvido por Matheus Manhães</span>
         </div>
+      </div>
+
+      <div class="content" *ngIf="!isMobile">
+        <ng-container *ngFor="let item of content">
+          <div class="link" routerLinkActive="highlight" [routerLink]="item.route">
+            <i [class]="item.icon"></i>
+            <span>{{ item.label }}</span>
+          </div>
+        </ng-container>
       </div>
     </div>
   </nav>

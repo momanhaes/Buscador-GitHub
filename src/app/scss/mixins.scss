@@ -124,6 +124,12 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  @mixin around {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
   
   @mixin z-index($type) {
     @if ($type == "hell") {
