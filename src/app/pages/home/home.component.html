@@ -1,10 +1,43 @@
 <div class="root">
   <div class="container">
     <div class="content" [@appeard]="state">
-      <i class="fa fa-pencil-square mr-3"></i>
-      <div class="text">
-        <h1>Bem-vindo ao Styleguide!</h1>
-        <p>Navegue para acessar os componentes</p>
+
+      <div class="text-center mb-3">
+        <i class="fa fa-pencil-square mr-3"></i>
+      </div>
+
+      <h1>Bem-vindo ao Styleguide!</h1>
+      <p>Navegue pelo menu para acessar os componentes</p>
+
+      <div class="bar"></div>
+
+      <div class="row">
+        <div class="col-12">
+          <app-button 
+            theme="outline" 
+            label="Portfolio" 
+            icon="fa fa-user-circle mr-2"
+            (click)="goTo('mmanhaes.com.br')">
+          </app-button>
+        </div>
+
+        <div class="col-12">
+          <app-button 
+            theme="outline" 
+            label="GitHub Search" 
+            routerLink='/gh-search' 
+            icon="fa fa-github mr-2">
+          </app-button>
+        </div>
+
+        <div class="col-12">
+          <app-button 
+            theme="outline" 
+            icon="fa fa-sticky-note mr-2"
+            label="Gerenciador de Figurinhas" 
+            (click)="goTo('gerenciador-figurinhas.netlify.app')">
+          </app-button>
+        </div>
       </div>
     </div>
   </div>

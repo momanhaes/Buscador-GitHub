@@ -10,6 +10,7 @@ export class ButtonComponent implements OnInit {
   @Input() icon?: string;
   @Input() label!: string;
   @Input() disabled!: boolean;
+  @Input() external: boolean = false;
 
   constructor() {}
 

@@ -13,4 +13,16 @@ export class HomeComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  public goTo(url: string): void {
+    let URL: string = '';
+    
+    if (!/^http[s]?:\/\//.test(url)) {
+        URL += 'http://';
+    }
+
+    URL += url;
+
+    window.open(URL, '_blank');
+  }
 }
