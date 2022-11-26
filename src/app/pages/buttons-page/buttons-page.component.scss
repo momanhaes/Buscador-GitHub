@@ -26,12 +26,27 @@
                 }
             }
 
+            .label {
+                @include start;
+                font-weight: bold;
+                margin-bottom: 5px;
+                color: $color-primary;
+            }
+
             @include large-and-down {
                 padding: 32px;
             }
 
             i {
                 font-size: 18px;
+            }
+
+            pre {
+                margin: 12px 0 12px 0;
+                white-space: inherit;
+                background: $color-grey-bg;
+                padding: 15px;
+                border-radius: 3px;
             }
         }
     }

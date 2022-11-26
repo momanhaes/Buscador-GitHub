@@ -7,6 +7,21 @@
         <p>Abaixo os botões</p>
       </div>
 
+      <div class="row" *ngIf="show" [@listAnimation]="buttons.length">
+        <div class="col-12 mb-3" *ngFor="let item of buttons">
+          <div class="label">{{ item.label }}</div>
+
+          <app-button 
+            [icon]="item.icon"
+            [theme]="item.theme" 
+            [label]="item.label" 
+            [disabled]="item.disabled">
+          </app-button>
+
+          <pre>{{ item.code }}</pre>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

@@ -1,6 +1,6 @@
 <button *ngIf="theme !== 'outline'" [disabled]="disabled" [class]="theme" mat-raised-button>
-  <i *ngIf="icon" [class]="icon" class="mr-2 text-white"></i>
-  <span class="text-white">{{ label }}</span>
+  <i *ngIf="icon" [class]="icon" class="mr-2"></i>
+  <span>{{ label }}</span>
 </button>
 
 <button *ngIf="theme === 'outline'" [disabled]="disabled" class="outline" mat-button>

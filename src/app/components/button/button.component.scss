@@ -25,16 +25,29 @@ button {
   }
 }
 
-.secondary {
-  background: $color-secondary;
+.custom {
+  background: $color-light-grey;
+  color: $color-text;
+
+  &:hover {
+    background: lighten($color-light-grey, 5%);
+  }
 }
 
 .cancel {
-  background: $color-grey-button;
+  background: $color-error;
+
+  &:hover {
+    background: lighten($color-error, 5%);
+  }
 }
 
-.disabeld {
+.primary-disabled {
   background: $color-disabled;
+
+  &:hover {
+    background: lighten($color-disabled, 5%);
+  }
 }
 
 .outline {
