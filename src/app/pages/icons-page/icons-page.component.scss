@@ -26,12 +26,47 @@
                 }
             }
 
+            .item {
+                @include start;
+                margin-bottom: 5px;
+
+                .label {
+                    @include start;
+                    margin-left: 5px;
+                    font-weight: bold;
+                    color: $color-primary;
+
+                    &.loading {
+                        margin-top: 10px;
+                    }
+                }
+
+                img {
+                    width: 18px;
+                    height: 18px;
+                    margin-right: 4px;
+                }
+            }
+
+            .bar {
+                margin: 2rem 0 2rem 0;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.075);
+            }
+
             @include large-and-down {
                 padding: 32px;
             }
 
             i {
                 font-size: 18px;
+            }
+
+            pre {
+                margin: 12px 0 12px 0;
+                white-space: inherit;
+                background: $color-grey-bg;
+                padding: 15px;
+                border-radius: 3px;
             }
         }
     }

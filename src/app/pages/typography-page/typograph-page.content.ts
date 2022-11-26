@@ -40,4 +40,8 @@ export const TYPOGRAPHY: ITypography[] = [
     name: 'Parágrafo',
     code: '<p>Parágrafo</p>',
   },
+  {
+    name: 'Link',
+    code: '<a href="https://mmanhaes.com.br" target="_blank">Link</a>',
+  },
 ];

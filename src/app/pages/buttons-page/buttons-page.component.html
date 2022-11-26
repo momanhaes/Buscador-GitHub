@@ -8,7 +8,7 @@
       </div>
 
       <div class="row" *ngIf="show" [@listAnimation]="buttons.length">
-        <div class="col-12 mb-3" *ngFor="let item of buttons">
+        <div class="col-6 mb-3" *ngFor="let item of buttons">
           <div class="label">{{ item.label }}</div>
 
           <app-button 

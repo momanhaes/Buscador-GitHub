@@ -23,21 +23,21 @@ export const BUTTONS: IButton[] = [
     theme: 'primary',
     label: 'Primary Icon',
     disabled: false,
-    code: '<app-button [theme]="primary" [label]="Primary Icon" [disabled]="false" [icon]="fa fa-mouse-pointer"></app-button>',
-    icon: 'fa fa-mouse-pointer'
-  },
-  {
-    theme: 'outline',
-    label: 'Outline Icon',
-    disabled: false,
-    code: '<app-button [theme]="outline" [label]="Outline Icon" [disabled]="false" [icon]="fa fa-mouse-pointer"></app-button>',
-    icon: 'fa fa-mouse-pointer'
+    code: '<app-button [theme]="primary" [label]="Primary Icon" [disabled]="false" [icon]="fa fa-smile-o"></app-button>',
+    icon: 'fa fa-smile-o',
   },
   {
     theme: 'cancel',
     label: 'Cancel',
     disabled: false,
     code: '<app-button [theme]="cancel" [label]="Cancel" [disabled]="false"></app-button>',
+  },
+  {
+    theme: 'outline',
+    label: 'Outline Icon',
+    disabled: false,
+    code: '<app-button [theme]="outline" [label]="Outline Icon" [disabled]="false" [icon]="fa fa-smile-o"></app-button>',
+    icon: 'fa fa-smile-o',
   },
   {
     theme: 'outline',

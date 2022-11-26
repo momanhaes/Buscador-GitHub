@@ -8,14 +8,12 @@
       </div>
 
       <div class="row" *ngIf="show" [@listAnimation]="items.length">
-        <div class="col-12" *ngFor="let item of items">
-          <div class="container-item">
+        <div class="col-4" *ngFor="let item of items">
             <app-item 
               [label]="item.label" 
               [value]="item.value" 
               [type]="item.type">
             </app-item>
-          </div>
         </div>
       </div>
       

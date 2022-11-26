@@ -34,11 +34,5 @@
                 font-size: 18px;
             }
         }
-
-        .container-color {
-            @include start;
-            align-items: center;
-            transition: all 0.2s ease-in-out;
-        }
     }
 }

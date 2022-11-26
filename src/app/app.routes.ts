@@ -7,8 +7,6 @@ import { ButtonsPageComponent } from './pages/buttons-page/buttons-page.componen
 import { TablesPageComponent } from './pages/tables-page/tables-page.component';
 import { ItemsPageComponent } from './pages/items-page/items-page.component';
 import { IconsPageComponent } from './pages/icons-page/icons-page.component';
-import { DirectivesPageComponent } from './pages/directives-page/directives-page.component';
-import { ServicesPageComponent } from './pages/services-page/services-page.component';
 import { ColorsPageComponent } from './pages/colors-page/colors-page.component';
 import { TypographyPageComponent } from './pages/typography-page/typography-page.component';
 import { PipesPageComponent } from './pages/pipes-page/pipes-page.component';
@@ -63,16 +61,6 @@ export const ROUTES: Routes = [
     path: 'pipes',
     component: PipesPageComponent,
     data: { title: 'Pipes' },
-  },
-  {
-    path: 'directives',
-    component: DirectivesPageComponent,
-    data: { title: 'Diretivas' },
-  },
-  {
-    path: 'services',
-    component: ServicesPageComponent,
-    data: { title: 'Serviços' },
   },
   {
     path: 'gh-search',

@@ -31,8 +31,6 @@ import { TablesPageComponent } from './pages/tables-page/tables-page.component';
 import { ItemsPageComponent } from './pages/items-page/items-page.component';
 import { IconsPageComponent } from './pages/icons-page/icons-page.component';
 import { PipesPageComponent } from './pages/pipes-page/pipes-page.component';
-import { DirectivesPageComponent } from './pages/directives-page/directives-page.component';
-import { ServicesPageComponent } from './pages/services-page/services-page.component';
 import { GitHubSearchComponent } from './pages/gh-search/gh-search.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
@@ -105,8 +103,6 @@ const PAGES = [
   ItemsPageComponent,
   IconsPageComponent,
   PipesPageComponent,
-  DirectivesPageComponent,
-  ServicesPageComponent,
   GitHubSearchComponent,
   NotFoundComponent,
 ];

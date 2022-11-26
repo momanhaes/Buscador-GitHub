@@ -1,12 +1,7 @@
 @import "/src/app/scss/includes.scss";
 
-h4 {
-    margin: 0;
-}
-
 .root {
     @include grid(32);
-    min-height: calc(100vh - 32px);
 
     .container {
         @include grid-column-span(32);
@@ -33,13 +28,6 @@ h4 {
                         margin-bottom: 1rem;
                     }
                 }
-            }
-
-            .label {
-                @include start;
-                font-weight: bold;
-                margin-bottom: 5px;
-                color: $color-primary;
             }
 
             @include large-and-down {

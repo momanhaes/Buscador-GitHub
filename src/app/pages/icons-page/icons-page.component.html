@@ -7,6 +7,44 @@
         <p>Abaixo os ícones</p>
       </div>
 
+      <div class="row" *ngIf="show" [@listAnimation]="icons.length">
+        <div class="col-6" *ngFor="let item of icons">
+          <ng-container *ngIf="item.isLoading">
+            <div class="item">
+              <app-spinner [label]="item.label ? item.label : ''" [size]="1.3"></app-spinner>
+              <div *ngIf="item.name" class="label loading">{{ item.name }}</div>
+            </div>
+            <pre>{{ item.code }}</pre>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="bar"></div>
+
+      <div class="row" *ngIf="show" [@listAnimation]="icons.length">
+        <div class="col-3" *ngFor="let item of icons">
+          <ng-container *ngIf="!item.isLoading">
+            <div class="item">
+              <i [class]="item.class"></i>
+              <div class="label">{{ item.name }}</div>
+            </div>
+            <pre>{{ item.code }}</pre>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="bar"></div>
+
+      <div class="row" *ngIf="show" [@listAnimation]="countries.length">
+        <div class="col-6" *ngFor="let item of countries">
+          <div class="item">
+            <img [src]="item.icon">
+            <div class="label">{{ item.name }}</div>
+          </div>
+          <pre>{{ item.code }}</pre>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

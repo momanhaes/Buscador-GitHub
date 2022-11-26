@@ -1,13 +1,14 @@
 <div class="root" [@appeard]="state">
   <div class="container">
     <div class="content">
+
       <div class="text">
         <h1 class="title">Pipes</h1>
         <p>Abaixo os pipes</p>
       </div>
 
-      <div *ngIf="show" [@listAnimation]="pipes.length">
-        <ng-container *ngFor="let pipe of pipes">
+      <div class="row" *ngIf="show" [@listAnimation]="pipes.length">
+        <div class="col-4" *ngFor="let pipe of pipes">
           <h4 class="label">{{ pipe.name }}</h4>
 
           <div>
@@ -22,7 +23,7 @@
             <p *ngIf="pipe.type === 'tel'">{{ pipe.value | tel }}</p>
             <pre>{{ pipe.usage }}</pre>
           </div>
-        </ng-container>
+        </div>
       </div>
     </div>
   </div>

@@ -50,14 +50,4 @@ export const SIDEBAR_CONTENT: IContent[] = [
     icon: 'fa fa-money fa-2x',
     label: 'Pipes',
   },
-  {
-    route: '/directives',
-    icon: 'fa fa-arrows-alt fa-2x',
-    label: 'Directives',
-  },
-  {
-    route: '/services',
-    icon: 'fa fa-cogs fa-2x',
-    label: 'Services',
-  },
 ];

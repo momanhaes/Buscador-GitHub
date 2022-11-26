@@ -16,6 +16,7 @@
 
                     <app-input 
                         [form]="userForm" 
+                        [isSearch]="true" 
                         label="Usuário" 
                         placeholder="Pesquisar usuário..." 
                         control="userControl" 
@@ -29,7 +30,7 @@
                 <div class="text">
                     <h1>{{ 'Repositórios de ' + person.name }}</h1>
                     <p><a style="cursor: pointer;" (click)="goProfile()">
-                        <i class="fa fa-undo"></i> <strong>Clique aqui</strong>
+                        <i class="fa fa-undo mr-2"></i> <strong>Clique aqui</strong>
                         </a><span> para voltar ao perfil de </span>'{{ person.login }}'
                     </p>
                 </div>
@@ -38,7 +39,8 @@
                     <i class="fa fa-search mr-3"></i>
 
                     <app-input 
-                        [form]="repoForm" 
+                        [form]="repoForm"
+                        [isSearch]="true" 
                         label="Repositórios" 
                         placeholder="Pesquisar repositórios..." 
                         control="repoControl" 

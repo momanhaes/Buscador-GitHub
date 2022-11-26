@@ -1,9 +1,9 @@
-export interface IColors {
+export interface IColor {
   name: string;
   hex: string;
 }
 
-export const COLORS: IColors[] = [
+export const COLORS: IColor[] = [
   {
     name: 'color-primary',
     hex: '#12343b',

@@ -1,10 +1,29 @@
 <div class="card" [@appeard]="state">
   <div class="profile" *ngIf="!isMobile">
-    <p *ngIf="profile.location"><i class="fa fa-map-marker" matTooltipPosition="left" matTooltip="Localização" matTooltipClass="tooltip-primary"></i> {{ profile.location }}</p>
-    <p *ngIf="profile.company"><i class="fa fa-building-o" matTooltipPosition="left" matTooltip="Empresa" matTooltipClass="tooltip-primary"></i> {{ profile.company }}</p>
-    <p *ngIf="profile.blog" (click)="goTo(profile.blog)" class="link"><i class="fa fa-link" matTooltipPosition="left" matTooltip="Link" matTooltipClass="tooltip-primary"></i> {{ profile.blog }}</p>
-    <p *ngIf="profile.email"><i class="fa fa-envelope-o" matTooltipPosition="left" matTooltip="Email" matTooltipClass="tooltip-primary"></i> {{ profile.email }}</p>
-    <p *ngIf="profile.twitter_username" (click)="goTwitter(profile.twitter_username)" class="link"><i class="fa fa-twitter" matTooltipPosition="left" matTooltip="Twitter" matTooltipClass="tooltip-primary"></i>@{{ profile.twitter_username }}</p>
+    <p *ngIf="profile.location">
+      <i class="fa fa-map-marker" matTooltipPosition="left" matTooltip="Localização" matTooltipClass="tooltip-primary"></i>
+      {{ profile.location }}
+    </p>
+
+    <p *ngIf="profile.company">
+      <i class="fa fa-building-o" matTooltipPosition="left" matTooltip="Empresa" matTooltipClass="tooltip-primary"></i>
+      {{ profile.company }}
+    </p>
+
+    <p *ngIf="profile.blog" (click)="goTo(profile.blog)" class="link">
+      <i class="fa fa-link" matTooltipPosition="left" matTooltip="Link" matTooltipClass="tooltip-primary"></i>
+      {{ profile.blog }}
+    </p>
+
+    <p *ngIf="profile.email">
+      <i class="fa fa-envelope-o" matTooltipPosition="left" matTooltip="Email" matTooltipClass="tooltip-primary"></i>
+      {{ profile.email }}
+    </p>
+
+    <p *ngIf="profile.twitter_username" (click)="goTwitter(profile.twitter_username)" class="link">
+      <i class="fa fa-twitter" matTooltipPosition="left" matTooltip="Twitter" matTooltipClass="tooltip-primary"></i>
+      @{{profile.twitter_username }}
+    </p>
   </div>
 
   <div class="profile-img">
@@ -16,8 +35,16 @@
     <p *ngIf="profile.bio && !isMobile">{{ profile.bio }}</p>
 
     <div class="principal">
-      <h3 *ngIf="profile.followers"><i class="fa fa-users" matTooltip="{{ profile.followers > 1 ? profile.followers + ' Seguidores' : profile.followers + ' Seguidor' }}" matTooltipClass="tooltip-primary"></i> {{ profile.followers }}</h3>
-      <h3 *ngIf="profile.following"><i class="fa fa-user" matTooltip="{{ profile.following + ' Seguindo' }}" matTooltipClass="tooltip-primary"></i> {{ profile.following }}</h3>
+      <h3 *ngIf="profile.followers">
+        <i class="fa fa-users" matTooltip="{{ profile.followers > 1 ? profile.followers + ' Seguidores' : profile.followers + ' Seguidor' }}" matTooltipClass="tooltip-primary"></i>
+        {{ profile.followers }}
+      </h3>
+
+      <h3 *ngIf="profile.following">
+        <i class="fa fa-user" matTooltip="{{ profile.following + ' Seguindo' }}" matTooltipClass="tooltip-primary"></i>
+        {{ profile.following }}
+      </h3>
+
       <h3 *ngIf="profile.login"><i class="fa fa-user-circle-o" matTooltip="Usuário" matTooltipClass="tooltip-primary"></i> {{ profile.login }}</h3>
     </div>
 
@@ -26,8 +53,22 @@
     </div>
 
     <div class="buttons">
-      <app-button *ngIf="profile.html_url" [class.mr-3]="!isMobile" theme="{{ isMobile ? 'outline' : 'primary' }}" icon="fa fa-github-alt" label="Ver Perfil" (click)="goTo(profile.html_url)"></app-button>
-      <app-button *ngIf="profile.login && !isLoading" theme="{{ isMobile ? 'outline' : 'primary' }}" icon="fa fa-code-fork" label="Ver Repositórios" (click)="goRepos(profile.login)"></app-button>
+      <app-button 
+        *ngIf="profile.html_url" 
+        [class.mr-3]="!isMobile" theme="{{ isMobile ? 'outline' : 'primary' }}" 
+        icon="fa fa-github-alt" 
+        label="Ver Perfil" 
+        (click)="goTo(profile.html_url)">
+      </app-button>
+
+      <app-button 
+        *ngIf="profile.login && !isLoading" 
+        theme="{{ isMobile ? 'outline' : 'primary' }}"
+        icon="fa fa-code-fork" 
+        label="Ver Repositórios" 
+        (click)="goRepos(profile.login)">
+      </app-button>
+
       <app-spinner *ngIf="isLoading" label="Carregando repositórios..." [size]="1.3"> </app-spinner>
     </div>
   </div>

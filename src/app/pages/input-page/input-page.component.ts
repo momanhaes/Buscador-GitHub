@@ -29,11 +29,11 @@ export class InputPageComponent implements OnInit {
   ngOnInit() {
     this.form = new FormGroup({
       input: new FormControl(''),
-      required: new FormControl(''),
-      disabled: new FormControl(''),
-      email: new FormControl('', [Validators.pattern(EMAIL_PATTERN)]),
-      password: new FormControl(''),
       search: new FormControl(''),
+      password: new FormControl(''),
+      disabled: new FormControl(''),
+      required: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.pattern(EMAIL_PATTERN)]),
     });
 
     setTimeout(() => {

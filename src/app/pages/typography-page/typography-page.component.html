@@ -8,7 +8,7 @@
       </div>
 
       <div class="row" *ngIf="show" [@listAnimation]="typograph.length">
-        <div class="col-12" *ngFor="let item of typograph">
+        <div class="col-6" *ngFor="let item of typograph">
           <ng-container *ngIf="item.name === 'Título'">
             <h1 class="title">{{ item.name }}</h1>
             <pre>{{ item.code }}</pre>
@@ -51,6 +51,11 @@
 
           <ng-container *ngIf="item.name === 'Parágrafo'">
             <p>{{ item.name }}</p>
+            <pre>{{ item.code }}</pre>
+          </ng-container>
+
+          <ng-container *ngIf="item.name === 'Link'">
+            <a href="https://mmanhaes.com.br" target="_blank">Link</a>
             <pre>{{ item.code }}</pre>
           </ng-container>
         </div>
