@@ -2,7 +2,6 @@ export interface IContent {
   route: string;
   icon: string;
   label: string;
-  isExternal?: boolean;
 }
 
 export const SIDEBAR_CONTENT: IContent[] = [

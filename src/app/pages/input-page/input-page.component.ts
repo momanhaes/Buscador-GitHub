@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { APPEARD } from 'src/app/animations/appeard.animation';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LIST_ANIMATION_LATERAL } from 'src/app/animations/list.animation';
+import { APPEARD } from 'src/app/animations/appeard.animation';
 import { IInput, INPUTS } from './input-page.content';
+import { EMAIL_PATTERN } from 'src/app/utils/patterns';
 
 @Component({
   selector: 'app-input-page',
@@ -21,9 +22,18 @@ export class InputPageComponent implements OnInit {
     return INPUTS;
   }
 
+  public get searchText(): string {
+    return this.form.get('search')?.value;
+  }
+
   ngOnInit() {
     this.form = new FormGroup({
-      appInput: new FormControl(''),
+      input: new FormControl(''),
+      required: new FormControl(''),
+      disabled: new FormControl(''),
+      email: new FormControl('', [Validators.pattern(EMAIL_PATTERN)]),
+      password: new FormControl(''),
+      search: new FormControl(''),
     });
 
     setTimeout(() => {

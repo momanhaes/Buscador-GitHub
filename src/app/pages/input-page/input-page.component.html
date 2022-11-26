@@ -8,19 +8,43 @@
       </div>
 
       <div class="row" *ngIf="show" [@listAnimation]="inputs.length">
-        <div class="col-12" *ngFor="let item of inputs">
+        <div class="col-12 mb-3" *ngFor="let item of inputs">
 
-          <ng-container *ngIf="item.name === 'Standard'">
+          <ng-container *ngIf="!item.isSearch">
             <div class="label">{{ item.name }}</div>
 
             <app-input 
-              type="text" 
               [form]="form" 
-              label="Padrão" 
-              [required]="false"
+              [type]="item.type" 
+              [label]="item.label" 
               [control]="item.control" 
-              placeholder="Input padrão">
+              [required]="item.required"
+              [disabled]="item.disabled"
+              [placeholder]="item.placeholder">
             </app-input>
+
+            <pre>{{ item.code }}</pre>
+          </ng-container>
+
+          <ng-container *ngIf="item.isSearch">
+            <div class="label">{{ item.name }}</div>
+
+            <div class="search">
+              <i class="fa fa-search mr-3"></i>
+    
+              <app-input 
+                [isSearch]="true" 
+                [form]="form" 
+                [type]="item.type" 
+                [label]="item.label"
+                [control]="item.control" 
+                [required]="item.required" 
+                [disabled]="item.disabled"
+                [placeholder]="item.placeholder">
+              </app-input>
+            </div>
+
+            <p class="mt-3" *ngIf="searchText">Pesquisando por '{{ searchText }}'</p>
 
             <pre>{{ item.code }}</pre>
           </ng-container>

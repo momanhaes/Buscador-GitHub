@@ -1,6 +1,6 @@
-<div class="root">
+<div class="root" [@appeard]="state">
   <div class="container">
-    <div class="content" [@appeard]="state">
+    <div class="content">
 
       <div class="text-center mb-3">
         <i class="fa fa-pencil-square mr-3"></i>
@@ -11,32 +11,25 @@
 
       <div class="bar"></div>
 
-      <div class="row">
-        <div class="col-12">
-          <app-button 
-            theme="outline" 
-            label="Portfolio" 
-            icon="fa fa-user-circle mr-2"
-            (click)="goTo('mmanhaes.com.br')">
-          </app-button>
-        </div>
+      <div class="row" *ngIf="show" [@listAnimation]="home.length">
+        <div class="col-12" *ngFor="let item of home">
+          <ng-container *ngIf="item.isExternal">
+            <app-button 
+              [theme]="item.theme" 
+              [label]="item.label" 
+              [icon]="item.icon" 
+              (click)="goTo(item.route)">
+            </app-button>
+          </ng-container>
 
-        <div class="col-12">
-          <app-button 
-            theme="outline" 
-            label="GitHub Search" 
-            routerLink='/gh-search' 
-            icon="fa fa-github mr-2">
-          </app-button>
-        </div>
-
-        <div class="col-12">
-          <app-button 
-            theme="outline" 
-            icon="fa fa-sticky-note mr-2"
-            label="Gerenciador de Figurinhas" 
-            (click)="goTo('gerenciador-figurinhas.netlify.app')">
-          </app-button>
+          <ng-container *ngIf="!item.isExternal">
+            <app-button 
+              [theme]="item.theme" 
+              [label]="item.label" 
+              [icon]="item.icon" 
+              [routerLink]="item.route">
+            </app-button>
+          </ng-container>
         </div>
       </div>
     </div>

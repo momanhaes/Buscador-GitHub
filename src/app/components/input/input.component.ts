@@ -17,22 +17,26 @@ import { APPEARD } from 'src/app/animations/appeard.animation';
 })
 export class InputComponent implements OnInit, AfterViewInit {
   public isRequiredError: boolean;
+  public isEmailError: boolean;
   public hasError: boolean;
   public state = 'ready';
 
   @Input() form!: FormGroup;
-  @Input() label!: string;
-  @Input() type!: string;
-  @Input() placeholder!: string;
-  @Input() control!: string;
   @Input() required: boolean;
   @Input() disabled: boolean;
+  @Input() isSearch: boolean;
+  @Input() type!: string;
+  @Input() label!: string;
+  @Input() control!: string;
+  @Input() placeholder!: string;
 
   constructor(private cdr: ChangeDetectorRef) {
     this.isRequiredError = false;
+    this.isEmailError = false;
     this.hasError = false;
     this.required = false;
     this.disabled = false;
+    this.isSearch = false;
   }
 
   ngOnInit(): void {
@@ -43,6 +47,7 @@ export class InputComponent implements OnInit, AfterViewInit {
     this.form.valueChanges.pipe(debounceTime(500)).subscribe(() => {
       this.hasError = this.form.get(this.control)?.errors && (this.form.get(this.control)?.dirty || this.form.get(this.control)?.touched) ? true : false;
       this.isRequiredError = this.form.get(this.control)?.errors?.required;
+      this.isEmailError = this.form.get(this.control)?.errors?.pattern;
       this.cdr.detectChanges();
     });
   }
