@@ -1,15 +1,15 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { InputPageComponent } from './pages/input-page/input-page.component';
-import { GitHubSearchComponent } from './pages/gh-search/gh-search.component';
+import { TypographyPageComponent } from './pages/typography-page/typography-page.component';
+import { ColorsPageComponent } from './pages/colors-page/colors-page.component';
+import { InputsPageComponent } from './pages/inputs-page/inputs-page.component';
 import { ButtonsPageComponent } from './pages/buttons-page/buttons-page.component';
 import { TablesPageComponent } from './pages/tables-page/tables-page.component';
 import { ItemsPageComponent } from './pages/items-page/items-page.component';
 import { IconsPageComponent } from './pages/icons-page/icons-page.component';
-import { ColorsPageComponent } from './pages/colors-page/colors-page.component';
-import { TypographyPageComponent } from './pages/typography-page/typography-page.component';
 import { PipesPageComponent } from './pages/pipes-page/pipes-page.component';
+import { GitHubSearchComponent } from './pages/gh-search/gh-search.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 export const ROUTES: Routes = [
   {
@@ -34,7 +34,7 @@ export const ROUTES: Routes = [
   },
   {
     path: 'inputs',
-    component: InputPageComponent,
+    component: InputsPageComponent,
     data: { title: 'Inputs' },
   },
   {

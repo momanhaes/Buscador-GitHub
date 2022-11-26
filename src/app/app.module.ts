@@ -25,7 +25,7 @@ import { ToastyListComponent } from './components/toasty-list/toasty-list.compon
 import { HomeComponent } from './pages/home/home.component';
 import { TypographyPageComponent } from './pages/typography-page/typography-page.component';
 import { ColorsPageComponent } from './pages/colors-page/colors-page.component';
-import { InputPageComponent } from './pages/input-page/input-page.component';
+import { InputsPageComponent } from './pages/inputs-page/inputs-page.component';
 import { ButtonsPageComponent } from './pages/buttons-page/buttons-page.component';
 import { TablesPageComponent } from './pages/tables-page/tables-page.component';
 import { ItemsPageComponent } from './pages/items-page/items-page.component';
@@ -97,7 +97,7 @@ const PAGES = [
   HomeComponent,
   TypographyPageComponent,
   ColorsPageComponent,
-  InputPageComponent,
+  InputsPageComponent,
   ButtonsPageComponent,
   TablesPageComponent,
   ItemsPageComponent,
