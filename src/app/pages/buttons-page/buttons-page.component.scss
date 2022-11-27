@@ -55,6 +55,25 @@
                 padding: 15px;
                 border-radius: 3px;
             }
+
+            .section {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+
+                span,
+                p {
+                    font-size: 14px;
+                }
+
+                &--primary {
+                    background-color: $color-primary;
+
+                    span,
+                    p {
+                        color: $color-white !important;
+                    }
+                }
+            }
         }
     }
 }

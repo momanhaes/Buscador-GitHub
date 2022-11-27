@@ -32,6 +32,65 @@
         </div>
       </div>
 
+      <div class="row" *ngIf="show" [@listAnimation]="sections.length">
+        <div class="col-12 mb-3" *ngFor="let section of sections">
+          <div class="label">{{ section.name }}</div>
+
+          <div class="section" [class.section--primary]="section.theme === 'primary'">
+            <ng-container *ngFor="let collapsible of section.collapsibles">
+
+              <app-collapsible [theme]="section.theme" [group]="collapsible.group">
+                <div header>
+                  <span>{{ collapsible.header }}</span>
+                </div>
+
+                <div content>
+                  <p>{{ collapsible.content }}</p>
+                </div>
+              </app-collapsible>
+
+            </ng-container>
+          </div>
+
+          <pre>
+              {{ section.code }}
+  
+              <i 
+                class="fa fa-clone"
+                (click)="clip(section.code)"
+                matTooltipPosition="above" 
+                matTooltip="Clique para copiar" 
+                matTooltipClass="tooltip-primary">
+              </i>
+          </pre>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="label">Read More</div>
+
+          <app-read-more 
+            [content]="loremIpsum" 
+            [limit]="300" 
+            [completeWords]="true">
+          </app-read-more>
+
+          <pre>
+            {{ getReadMoreCode() }}
+
+            <i 
+              class="fa fa-clone"
+              (click)="clip(getReadMoreCode())"
+              matTooltipPosition="above" 
+              matTooltip="Clique para copiar" 
+              matTooltipClass="tooltip-primary">
+            </i>
+          </pre>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

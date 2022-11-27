@@ -15,6 +15,7 @@ import { ITable, TABLES } from './tables-page.content';
 })
 export class TablesPageComponent implements OnInit {
   public user: string = 'momanhaes';
+  public loading: boolean = true;
   public data: IRepo[] = [];
   public show!: boolean;
   public state = 'ready';
@@ -37,9 +38,12 @@ export class TablesPageComponent implements OnInit {
   }
 
   public getData(): void {
-    this.githubService
-      .getUserRepos(this.user)
-      .subscribe((repos: IRepo[]) => (this.data = repos));
+    setTimeout(() => {
+      this.githubService.getUserRepos(this.user).subscribe((repos: IRepo[]) => {
+        this.data = repos;
+        this.loading = false;
+      });
+    }, 500);
   }
 
   public clip(code: string): void {

@@ -2,7 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { APPEARD } from 'src/app/animations/appeard.animation';
 import { LIST_ANIMATION_LATERAL } from 'src/app/animations/list.animation';
 import { ToastyService } from 'src/app/services/toasty.service';
-import { BUTTONS, IButton } from './buttons-page.content';
+import {
+  BUTTONS,
+  IButton,
+  ISection,
+  LOREM_IPSUM,
+  SECTIONS,
+} from './buttons-page.content';
 
 @Component({
   selector: 'app-buttons-page',
@@ -11,6 +17,7 @@ import { BUTTONS, IButton } from './buttons-page.content';
   animations: [APPEARD, LIST_ANIMATION_LATERAL],
 })
 export class ButtonsPageComponent implements OnInit {
+  public loremIpsum: string = LOREM_IPSUM;
   public state = 'ready';
   public show!: boolean;
 
@@ -20,10 +27,18 @@ export class ButtonsPageComponent implements OnInit {
     return BUTTONS;
   }
 
+  get sections(): ISection[] {
+    return SECTIONS;
+  }
+
   ngOnInit() {
     setTimeout(() => {
       this.show = true;
     }, 0);
+  }
+
+  public getReadMoreCode(): string {
+    return `<app-read-more [content]="loremIpsum" [limit]="300" [completeWords]="true"></app-read-more>`;
   }
 
   public clip(code: string): void {

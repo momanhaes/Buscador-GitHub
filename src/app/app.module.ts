@@ -19,7 +19,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ButtonComponent } from './components/button/button.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { ToastyComponent } from './components/toasty/toasty.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ReadMoreComponent } from './components/read-more/read-more.component';
 import { ToastyListComponent } from './components/toasty-list/toasty-list.component';
+import { CollapsibleComponent } from './components/collapsible/collapsible.component';
 
 // PAGES
 import { HomeComponent } from './pages/home/home.component';
@@ -58,10 +61,12 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 // PROVIDERS
+import { ToastyService } from './services/toasty.service';
 import { WindowService } from './services/window.service';
 import { GithubService } from './services/github.service';
+import { CollapsibleService } from './services/collapsible.service';
 import { NotificationService } from './services/notification.service';
-import { ProfileComponent } from './components/profile/profile.component';
+import { SessionStorageService } from './services/session-storage.service';
 
 // INTERNAL IMPORTS
 import { ROUTES } from './app.routes';
@@ -71,7 +76,10 @@ registerLocaleData(localePt, 'pt');
 
 const PROVIDERS = [
   { provide: LOCALE_ID, useValue: 'pt' },
+  SessionStorageService,
   NotificationService,
+  CollapsibleService,
+  ToastyService,
   WindowService,
   GithubService
 ];
@@ -90,7 +98,9 @@ const DECLARATIONS = [
   ItemComponent,
   ResizeDirective,
   ToastyComponent,
+  ReadMoreComponent,
   ToastyListComponent,
+  CollapsibleComponent,
 ];
 
 const PAGES = [

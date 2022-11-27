@@ -9,7 +9,11 @@
 
       <div class="row" *ngIf="show" [@listAnimation]="tables.length">
         <div class="col-12 mb-3" *ngFor="let item of tables">
-          <ng-container *ngIf="data.length">
+          <div class="text-center mt-3">
+            <app-spinner *ngIf="loading" [size]="1.3"></app-spinner>
+          </div>
+
+          <ng-container *ngIf="data.length && !loading">
             <div class="label">{{ item.name }}</div>
 
             <div class="table-page">
