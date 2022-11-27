@@ -27,8 +27,8 @@ export class ColorsPageComponent implements OnInit {
   }
 
   public clip(color: IColor): void {
-    this.clipboard(`${color.name}: ${color.hex}`);
-    this.toasty.show({ text: `${color.name}: ${color.hex} copiado!` });
+    this.clipboard(`$${color.name}: ${color.hex}`);
+    this.toasty.show({ text: `$${color.name}: ${color.hex} copiado!` });
   }
 
   public clipboard(word: string): void {

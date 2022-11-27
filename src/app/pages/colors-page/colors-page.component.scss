@@ -58,9 +58,17 @@
                 transform: translateX(10px);
             }
 
-            .name,
+            .name {
+                font-weight: bold;
+                margin: 0 0 0 15px !important;
+            }
+
             .hex {
                 margin-left: 15px;
+                font-size: 12px;
+                color: $color-grey;
+                font-style: italic;
+                text-align: right;
             }
 
             .color {
@@ -120,13 +128,6 @@
                 &.color-grey {
                     background-color: $color-grey;
                 }
-            }
-
-            .hex {
-                font-size: 12px;
-                color: $color-grey;
-                font-style: italic;
-                text-align: right;
             }
         }
     }

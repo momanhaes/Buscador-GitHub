@@ -10,8 +10,16 @@
       <div class="row" *ngIf="show" [@listAnimation]="colors.length">
         <div class="col-12" *ngFor="let color of colors">
           <div (click)="clip(color)" class="container-color">
-            <div class="color" [ngClass]="color.name"></div>
-            <h4 class="name">{{ color.name }}</h4>
+
+            <div 
+              class="color" 
+              [ngClass]="color.name" 
+              matTooltipPosition="left" 
+              matTooltip="Clique para copiar"
+              matTooltipClass="tooltip-primary">
+            </div>
+
+            <h4 class="name">${{ color.name }}</h4>
             <span class="hex">{{ color.hex }}</span>
           </div>
         </div>

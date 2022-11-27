@@ -22,7 +22,7 @@
 
             .title {
                 font-weight: bold;
-                color: $color-primary;
+                color: $color-primary !important;
                 border-bottom: 1px solid rgba(0, 0, 0, 0.075);
             }
 
@@ -32,9 +32,17 @@
 
             i {
                 font-size: 18px;
+                color: $color-primary;
+            }
+
+            .fa-clone {
+                cursor: pointer;
+                font-size: 16px;
+                margin-left: 12px;
             }
 
             pre {
+                @include between;
                 margin: 12px 0 12px 0;
                 white-space: inherit;
                 background: $color-grey-bg;

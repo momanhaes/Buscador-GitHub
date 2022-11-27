@@ -1,11 +1,11 @@
-export interface IPipeUsage {
+export interface IPipe {
   name: string;
   type: string;
   usage: string;
   value: string | number;
 }
 
-export const PIPES: IPipeUsage[] = [
+export const PIPES: IPipe[] = [
   {
     name: 'CPF',
     type: 'cpf',

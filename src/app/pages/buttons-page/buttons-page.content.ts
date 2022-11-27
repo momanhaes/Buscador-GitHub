@@ -14,17 +14,17 @@ export const BUTTONS: IButton[] = [
     code: '<app-button [theme]="primary" [label]="Primary" [disabled]="false"></app-button>',
   },
   {
-    theme: 'custom',
-    label: 'Custom',
-    disabled: false,
-    code: '<app-button [theme]="custom" [label]="Custom" [disabled]="false"></app-button>',
-  },
-  {
     theme: 'primary',
     label: 'Primary Icon',
     disabled: false,
     code: '<app-button [theme]="primary" [label]="Primary Icon" [disabled]="false" [icon]="fa fa-smile-o"></app-button>',
     icon: 'fa fa-smile-o',
+  },
+  {
+    theme: 'custom',
+    label: 'Custom',
+    disabled: false,
+    code: '<app-button [theme]="custom" [label]="Custom" [disabled]="false"></app-button>',
   },
   {
     theme: 'cancel',
@@ -34,16 +34,16 @@ export const BUTTONS: IButton[] = [
   },
   {
     theme: 'outline',
+    label: 'Outline',
+    disabled: false,
+    code: '<app-button [theme]="outline" [label]="Outline" [disabled]="false"></app-button>',
+  },
+  {
+    theme: 'outline',
     label: 'Outline Icon',
     disabled: false,
     code: '<app-button [theme]="outline" [label]="Outline Icon" [disabled]="false" [icon]="fa fa-smile-o"></app-button>',
     icon: 'fa fa-smile-o',
-  },
-  {
-    theme: 'outline',
-    label: 'Outline',
-    disabled: false,
-    code: '<app-button [theme]="outline" [label]="Outline" [disabled]="false"></app-button>',
   },
   {
     theme: 'primary-disabled',

@@ -2,7 +2,7 @@
 
 .toasty-container {
   display: flex;
-  position: absolute;
+  position: fixed;
   @include z-index('space');
 
   pointer-events: none;

@@ -8,12 +8,24 @@
       </div>
 
       <div class="row" *ngIf="show" [@listAnimation]="items.length">
-        <div class="col-4" *ngFor="let item of items">
+        <div class="col-6" *ngFor="let item of items">
             <app-item 
               [label]="item.label" 
               [value]="item.value" 
               [type]="item.type">
             </app-item>
+
+            <pre>
+              {{ item.code }}
+  
+              <i 
+                class="fa fa-clone"
+                (click)="clip(item.code)"
+                matTooltipPosition="above" 
+                matTooltip="Clique para copiar" 
+                matTooltipClass="tooltip-primary">
+              </i>
+            </pre>
         </div>
       </div>
       

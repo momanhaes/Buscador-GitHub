@@ -8,29 +8,51 @@
       </div>
 
       <div class="row" *ngIf="show" [@listAnimation]="icons.length">
-        <div class="col-6" *ngFor="let item of icons">
-          <ng-container *ngIf="item.isLoading">
+        <ng-container *ngFor="let item of icons">
+          <div class="col-6" *ngIf="item.isLoading">
             <div class="item">
               <app-spinner [label]="item.label ? item.label : ''" [size]="1.3"></app-spinner>
               <div *ngIf="item.name" class="label loading">{{ item.name }}</div>
             </div>
-            <pre>{{ item.code }}</pre>
-          </ng-container>
-        </div>
+
+            <pre>
+              {{ item.code }}
+
+              <i 
+                class="fa fa-clone"
+                (click)="clip(item.code)"
+                matTooltipPosition="above" 
+                matTooltip="Clique para copiar" 
+                matTooltipClass="tooltip-primary">
+              </i>
+            </pre>
+          </div>
+        </ng-container>
       </div>
 
       <div class="bar"></div>
 
       <div class="row" *ngIf="show" [@listAnimation]="icons.length">
-        <div class="col-3" *ngFor="let item of icons">
-          <ng-container *ngIf="!item.isLoading">
+        <ng-container *ngFor="let item of icons">
+          <div class="col-4" *ngIf="!item.isLoading">
             <div class="item">
               <i [class]="item.class"></i>
               <div class="label">{{ item.name }}</div>
             </div>
-            <pre>{{ item.code }}</pre>
-          </ng-container>
-        </div>
+
+            <pre>
+              {{ item.code }}
+
+              <i 
+                class="fa fa-clone"
+                (click)="clip(item.code)"
+                matTooltipPosition="above" 
+                matTooltip="Clique para copiar" 
+                matTooltipClass="tooltip-primary">
+              </i>
+            </pre>
+          </div>
+        </ng-container>
       </div>
 
       <div class="bar"></div>
@@ -41,7 +63,18 @@
             <img [src]="item.icon">
             <div class="label">{{ item.name }}</div>
           </div>
-          <pre>{{ item.code }}</pre>
+
+          <pre>
+            {{ item.code }}
+
+            <i 
+              class="fa fa-clone"
+              (click)="clip(item.code)"
+              matTooltipPosition="above" 
+              matTooltip="Clique para copiar" 
+              matTooltipClass="tooltip-primary">
+            </i>
+          </pre>
         </div>
       </div>
 

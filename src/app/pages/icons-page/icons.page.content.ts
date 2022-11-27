@@ -14,6 +14,20 @@ export interface ICountry {
 
 export const ICONS: IIcon[] = [
   {
+    name: 'Loading',
+    class: '',
+    code: '<app-spinner [size]="1.3"></app-spinner>',
+    label: '',
+    isLoading: true,
+  },
+  {
+    name: '',
+    class: '',
+    code: '<app-spinner label="Carregando..." [size]="1.3"></app-spinner>',
+    label: 'Carregando...',
+    isLoading: true,
+  },
+  {
     name: 'GitHub',
     class: 'fa fa-github',
     code: '<i class="fa fa-github"></i>',
@@ -72,20 +86,6 @@ export const ICONS: IIcon[] = [
     name: 'Cogs',
     class: 'fa fa-cogs',
     code: '<i class="fa fa-cogs"></i>',
-  },
-  {
-    name: 'Loading',
-    class: '',
-    code: '<app-spinner [size]="1.3"></app-spinner>',
-    label: '',
-    isLoading: true,
-  },
-  {
-    name: '',
-    class: '',
-    code: '<app-spinner label="Carregando..." [size]="1.3"></app-spinner>',
-    label: 'Carregando...',
-    isLoading: true,
   },
 ];
 

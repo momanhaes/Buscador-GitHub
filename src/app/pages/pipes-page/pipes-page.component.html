@@ -8,20 +8,31 @@
       </div>
 
       <div class="row" *ngIf="show" [@listAnimation]="pipes.length">
-        <div class="col-4" *ngFor="let pipe of pipes">
-          <h4 class="label">{{ pipe.name }}</h4>
+        <div class="col-4" *ngFor="let item of pipes">
+          <h4 class="label">{{ item.name }}</h4>
 
           <div>
-            <p *ngIf="pipe.type === 'cpf'">{{ pipe.value | cpf }}</p>
-            <p *ngIf="pipe.type === 'cnpj'">{{ pipe.value | cnpj }}</p>
-            <p *ngIf="pipe.type === 'currency'">{{ pipe.value | currency: "BRL":"symbol" }}</p>
-            <p *ngIf="pipe.type === 'date'">{{ pipe.value | date:"MM/dd/yyyy" }}</p>
-            <p *ngIf="pipe.type === 'percent'">{{ pipe.value | percent }}</p>
-            <p *ngIf="pipe.type === 'account'">{{ pipe.value | account }}</p>
-            <p *ngIf="pipe.type === 'cep'">{{ pipe.value | cep }}</p>
-            <p *ngIf="pipe.type === 'cel'">{{ pipe.value | cel }}</p>
-            <p *ngIf="pipe.type === 'tel'">{{ pipe.value | tel }}</p>
-            <pre>{{ pipe.usage }}</pre>
+            <p *ngIf="item.type === 'cpf'">{{ item.value | cpf }}</p>
+            <p *ngIf="item.type === 'cnpj'">{{ item.value | cnpj }}</p>
+            <p *ngIf="item.type === 'currency'">{{ item.value | currency: "BRL":"symbol" }}</p>
+            <p *ngIf="item.type === 'date'">{{ item.value | date:"MM/dd/yyyy" }}</p>
+            <p *ngIf="item.type === 'percent'">{{ item.value | percent }}</p>
+            <p *ngIf="item.type === 'account'">{{ item.value | account }}</p>
+            <p *ngIf="item.type === 'cep'">{{ item.value | cep }}</p>
+            <p *ngIf="item.type === 'cel'">{{ item.value | cel }}</p>
+            <p *ngIf="item.type === 'tel'">{{ item.value | tel }}</p>
+            
+            <pre>
+              {{ item.usage }}
+  
+              <i 
+                class="fa fa-clone"
+                (click)="clip(item.usage)"
+                matTooltipPosition="above" 
+                matTooltip="Clique para copiar" 
+                matTooltipClass="tooltip-primary">
+              </i>
+            </pre>
           </div>
         </div>
       </div>

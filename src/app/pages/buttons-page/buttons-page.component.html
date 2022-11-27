@@ -18,7 +18,17 @@
             [disabled]="item.disabled">
           </app-button>
 
-          <pre>{{ item.code }}</pre>
+          <pre>
+            {{ item.code }}
+
+            <i 
+              class="fa fa-clone"
+              (click)="clip(item.code)"
+              matTooltipPosition="above" 
+              matTooltip="Clique para copiar" 
+              matTooltipClass="tooltip-primary">
+            </i>
+          </pre>
         </div>
       </div>
 

@@ -4,7 +4,31 @@
 
       <div class="text">
         <h1 class="title">Tables</h1>
-        <p>Abaixo os tabelas</p>
+        <p>Abaixo as tabelas</p>
+      </div>
+
+      <div class="row" *ngIf="show" [@listAnimation]="tables.length">
+        <div class="col-12 mb-3" *ngFor="let item of tables">
+          <ng-container *ngIf="data.length">
+            <div class="label">{{ item.name }}</div>
+
+            <div class="table-page">
+              <app-table [data]="data"></app-table>
+            </div>
+
+            <pre>
+              {{ item.code }}
+    
+              <i 
+                class="fa fa-clone" 
+                (click)="clip(item.code)"
+                matTooltipPosition="above" 
+                matTooltip="Clique para copiar" 
+                matTooltipClass="tooltip-primary">
+              </i>
+            </pre>
+          </ng-container>
+        </div>
       </div>
 
     </div>
