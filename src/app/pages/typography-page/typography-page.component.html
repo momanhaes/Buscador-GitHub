@@ -9,7 +9,9 @@
 
       <div class="row" *ngIf="show" [@listAnimation]="typograph.length">
         <div class="col-6" *ngFor="let item of typograph">
-          <div [innerHTML]="item.code"></div>
+          <h1 *ngIf="item.name === 'Título'" class="title">Título</h1>
+          <div *ngIf="item.name !== 'Título'" [innerHTML]="item.code"></div>
+
           <pre>
             {{ item.code }}
 
