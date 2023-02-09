@@ -14,13 +14,13 @@ export const HOME: IHome[] = [
   //   route: 'mmanhaes.com.br',
   //   isExternal: true,
   // },
-  {
-    theme: 'outline',
-    label: 'GitHub Search',
-    icon: 'fa fa-github',
-    route: '/gh-search',
-    isExternal: false,
-  },
+  // {
+  //   theme: 'outline',
+  //   label: 'GitHub Search',
+  //   icon: 'fa fa-github',
+  //   route: '/gh-search',
+  //   isExternal: false,
+  // },
   // {
   //   theme: 'outline',
   //   label: 'Gerenciador de Figurinhas',
