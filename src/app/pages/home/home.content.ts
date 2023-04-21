@@ -9,7 +9,7 @@ export interface IHome {
 export const HOME: IHome[] = [
   {
     theme: 'outline',
-    label: 'Portfolio',
+    label: 'Site Pessoal',
     icon: 'fa fa-user-circle',
     route: 'mmanhaes.com.br',
     isExternal: true,
