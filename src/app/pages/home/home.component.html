@@ -3,7 +3,7 @@
     <div class="content">
 
       <div class="text-center mb-3">
-        <i class="fa fa-pencil-square mr-3"></i>
+        <i class="icon fa fa-pencil-square mr-3"></i>
       </div>
 
       <h1>Bem-vindo ao Styleguide!</h1>
@@ -11,8 +11,11 @@
 
       <div class="bar"></div>
 
+      <p class="text-center mb-3">Navegue pelos links abaixo para acessar outros projetos</p>
+      <p class="text-center mb-5">Esses e demais projetos disponíveis no <a class="color-primary" target="_blank" href="https://github.com/momanhaes?tab=repositories"> <i class="fa fa-github"></i> GitHub</a></p>
+
       <div class="row" *ngIf="show" [@listAnimation]="home.length">
-        <div class="col-12" *ngFor="let item of home">
+        <div class="col-6" *ngFor="let item of home">
           <ng-container *ngIf="item.isExternal">
             <app-button 
               [theme]="item.theme" 
