@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { catchError } from 'rxjs/operators';
 import { APPEARD } from 'src/app/animations/appeard.animation';
 import { LIST_ANIMATION_LATERAL } from 'src/app/animations/list.animation';
-import { IRepo } from 'src/app/components/profile/profile.interface';
+import { IRepo } from 'src/app/fragments/profile/profile.interface';
 import { GithubService } from 'src/app/services/github.service';
 import { ToastyService } from 'src/app/services/toasty.service';
 import { ITable, TABLES } from './tables-page.content';

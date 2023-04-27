@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 import { GITHUB_API } from '../app.api';
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
-import { IProfile, IRepo, IRepoEvent } from '../components/profile/profile.interface';
+import { IProfile, IRepo, IRepoEvent } from '../fragments/profile/profile.interface';
 
 @Injectable({ providedIn: 'root' })
 export class GithubService {

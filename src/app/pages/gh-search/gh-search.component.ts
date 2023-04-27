@@ -6,7 +6,7 @@ import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { APPEARD } from 'src/app/animations/appeard.animation';
 import { GithubService } from 'src/app/services/github.service';
 import { WindowService } from 'src/app/services/window.service';
-import { IProfile, IRepo } from 'src/app/components/profile/profile.interface';
+import { IProfile, IRepo } from 'src/app/fragments/profile/profile.interface';
 import {
   catchError,
   debounceTime,

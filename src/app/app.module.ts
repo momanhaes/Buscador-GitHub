@@ -1,4 +1,4 @@
-// ANGLAR IMPORTS
+// ANGULAR IMPORTS
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -8,21 +8,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 
-// DECLARATIONS
+// COMPONENTS
 import { AppComponent } from './app.component';
 import { ResizeDirective } from './directives/resize.directive';
-import { TableComponent } from './components/table/table.component';
+import { ItemComponent } from './components/item/item.component';
 import { InputComponent } from './components/input/input.component';
-import { HeaderComponent } from './components/header/header.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { ButtonComponent } from './components/button/button.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { ToastyComponent } from './components/toasty/toasty.component';
-import { ProfileComponent } from './components/profile/profile.component';
 import { ReadMoreComponent } from './components/read-more/read-more.component';
 import { ToastyListComponent } from './components/toasty-list/toasty-list.component';
 import { CollapsibleComponent } from './components/collapsible/collapsible.component';
+
+// FRAGMENTS
+import { ListComponent } from './fragments/list/list.component';
+import { TableComponent } from './fragments/table/table.component';
+import { HeaderComponent } from './fragments/header/header.component';
+import { FooterComponent } from './fragments/footer/footer.component';
+import { SidebarComponent } from './fragments/sidebar/sidebar.component';
+import { ProfileComponent } from './fragments/profile/profile.component';
 
 // PAGES
 import { HomeComponent } from './pages/home/home.component';
@@ -47,20 +51,18 @@ import { TelWithDDDPipe } from './pipes/tel.pipe';
 
 // MATERIAL IMPORTS
 import { MatSortModule } from '@angular/material/sort';
-import { MatLegacyMenuModule as MatMenuModule } from '@angular/material/legacy-menu';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
-import { MatLegacyTableModule as MatTableModule } from '@angular/material/legacy-table';
-import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
-import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
-import { MatLegacySelectModule as MatSelectModule } from '@angular/material/legacy-select';
-import { MatLegacyTooltipModule as MatTooltipModule } from '@angular/material/legacy-tooltip';
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { ItemComponent } from './components/item/item.component';
-import { ListComponent } from './components/list/list.component';
-import { MatLegacyPaginatorModule as MatPaginatorModule } from '@angular/material/legacy-paginator';
-import { MatLegacyProgressSpinnerModule as MatProgressSpinnerModule } from '@angular/material/legacy-progress-spinner';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
-// PROVIDERS
+// SERVICES
 import { ToastyService } from './services/toasty.service';
 import { WindowService } from './services/window.service';
 import { GithubService } from './services/github.service';
@@ -74,7 +76,7 @@ import { ROUTES } from './app.routes';
 // LOCALE DEFINITIONS
 registerLocaleData(localePt, 'pt');
 
-const PROVIDERS = [
+const SERVICES = [
   { provide: LOCALE_ID, useValue: 'pt' },
   SessionStorageService,
   NotificationService,
@@ -84,17 +86,11 @@ const PROVIDERS = [
   GithubService
 ];
 
-const DECLARATIONS = [
+const COMPONENTS = [
   AppComponent,
-  FooterComponent,
-  HeaderComponent,
-  SidebarComponent,
   ButtonComponent,
   InputComponent,
   SpinnerComponent,
-  ProfileComponent,
-  TableComponent,
-  ListComponent,
   ItemComponent,
   ResizeDirective,
   ToastyComponent,
@@ -102,6 +98,15 @@ const DECLARATIONS = [
   ToastyListComponent,
   CollapsibleComponent,
 ];
+
+const FRAGMENTS = [
+  ListComponent,
+  TableComponent,
+  HeaderComponent,
+  FooterComponent,
+  SidebarComponent,
+  ProfileComponent
+];  
 
 const PAGES = [
   HomeComponent,
@@ -149,9 +154,9 @@ const MATERIAL_MODULES = [
 ];
 
 @NgModule({
-  declarations: [...DECLARATIONS, ...PAGES, ...PIPES],
+  declarations: [...COMPONENTS, ...FRAGMENTS, ...PAGES, ...PIPES],
   imports: [...ANGULAR_MODULES, ...MATERIAL_MODULES],
-  providers: [...PROVIDERS],
+  providers: [...SERVICES],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
