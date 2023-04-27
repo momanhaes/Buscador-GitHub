@@ -6,9 +6,9 @@ import {
   ViewChild,
 } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
-import { MatTable } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatTableDataSource } from '@angular/material/table';
+import { MatLegacyTable as MatTable } from '@angular/material/legacy-table';
+import { MatLegacyPaginator as MatPaginator } from '@angular/material/legacy-paginator';
+import { MatLegacyTableDataSource as MatTableDataSource } from '@angular/material/legacy-table';
 import { APPEARD } from 'src/app/animations/appeard.animation';
 import { GithubService } from 'src/app/services/github.service';
 import { IRepo, IRepoEvent } from '../profile/profile.interface';
