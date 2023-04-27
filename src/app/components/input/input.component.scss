@@ -17,9 +17,3 @@ mat-form-field {
     }
   }
 }
-
-::ng-deep {
-  .mat-form-field-appearance-outline .mat-form-field-outline {
-    color: $color-primary !important;
-  }
-}

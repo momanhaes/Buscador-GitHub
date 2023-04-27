@@ -22,7 +22,7 @@
 
     <ng-container matColumnDef="url">
       <th mat-header-cell *matHeaderCellDef>URL</th>
-      <td (click)="goTo(row.html_url)" matTooltip="Ir para repositório" matTooltipClass="tooltip-primary" mat-cell *matCellDef="let row"><i class="fa fa-external-link"></i></td>
+      <td (click)="goTo(row.html_url)" matTooltip="Ir para repositório" mat-cell *matCellDef="let row"><i class="fa fa-external-link"></i></td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

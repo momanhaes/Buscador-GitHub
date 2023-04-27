@@ -6,11 +6,11 @@ export interface IColor {
 export const COLORS: IColor[] = [
   {
     name: 'color-primary',
-    hex: '#12343b',
+    hex: '#004D40',
   },
   {
     name: 'color-secondary',
-    hex: '#fff5d7',
+    hex: '#FFF9C4',
   },
   {
     name: 'color-terciery',
@@ -18,7 +18,7 @@ export const COLORS: IColor[] = [
   },
   {
     name: 'color-primary-hover',
-    hex: '#2d545e',
+    hex: '#00796B',
   },
   {
     name: 'color-white',
