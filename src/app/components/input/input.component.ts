@@ -24,7 +24,6 @@ export class InputComponent implements OnInit, AfterViewInit {
   @Input() form!: UntypedFormGroup;
   @Input() required: boolean;
   @Input() disabled: boolean;
-  @Input() isSearch: boolean;
   @Input() type!: string;
   @Input() label!: string;
   @Input() control!: string;
@@ -36,7 +35,6 @@ export class InputComponent implements OnInit, AfterViewInit {
     this.hasError = false;
     this.required = false;
     this.disabled = false;
-    this.isSearch = false;
   }
 
   ngOnInit(): void {

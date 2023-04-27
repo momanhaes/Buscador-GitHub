@@ -15,7 +15,7 @@ export const HOME: IHome[] = [
   //   isExternal: true,
   // },
   {
-    theme: 'outline',
+    theme: 'primary',
     label: 'GitHub Search',
     icon: 'fa fa-github',
     route: '/gh-search',

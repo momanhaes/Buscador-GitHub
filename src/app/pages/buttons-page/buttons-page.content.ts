@@ -28,54 +28,54 @@ export interface ISection {
 
 export const BUTTONS: IButton[] = [
   {
-    theme: 'primary',
-    label: 'Primary',
+    theme: 'basic',
+    label: 'Basic',
     disabled: false,
-    code: '<app-button [theme]="primary" [label]="Primary" [disabled]="false"></app-button>',
+    code: '<app-button theme="basic" label="Basic" [disabled]="false"></app-button>',
   },
   {
     theme: 'primary',
     label: 'Primary Icon',
     disabled: false,
-    code: '<app-button [theme]="primary" [label]="Primary Icon" [disabled]="false" [icon]="fa fa-smile-o"></app-button>',
+    code: '<app-button theme="primary" label="Primary Icon" [disabled]="false" [icon]="fa fa-smile-o"></app-button>',
     icon: 'fa fa-smile-o',
   },
   {
-    theme: 'custom',
-    label: 'Custom',
+    theme: 'accent',
+    label: 'Accent',
     disabled: false,
-    code: '<app-button [theme]="custom" [label]="Custom" [disabled]="false"></app-button>',
+    code: '<app-button theme="accent" label="Accent" [disabled]="false"></app-button>',
   },
   {
-    theme: 'cancel',
-    label: 'Cancel',
+    theme: 'warn',
+    label: 'Warn',
     disabled: false,
-    code: '<app-button [theme]="cancel" [label]="Cancel" [disabled]="false"></app-button>',
+    code: '<app-button theme="warn" label="Warn" [disabled]="false"></app-button>',
   },
   {
     theme: 'outline',
     label: 'Outline',
     disabled: false,
-    code: '<app-button [theme]="outline" [label]="Outline" [disabled]="false"></app-button>',
+    code: '<app-button theme="outline" label="Outline" [disabled]="false"></app-button>',
   },
   {
     theme: 'outline',
     label: 'Outline Icon',
     disabled: false,
-    code: '<app-button [theme]="outline" [label]="Outline Icon" [disabled]="false" [icon]="fa fa-smile-o"></app-button>',
+    code: '<app-button theme="outline" label="Outline Icon" [disabled]="false" [icon]="fa fa-smile-o"></app-button>',
     icon: 'fa fa-smile-o',
   },
   {
     theme: 'primary-disabled',
     label: 'Primary Disabled',
     disabled: true,
-    code: '<app-button [theme]="primary-disabled" [label]="Primary Disabled" [disabled]="true"></app-button>',
+    code: '<app-button theme="primary-disabled" label="Primary Disabled" [disabled]="true"></app-button>',
   },
   {
     theme: 'outline',
     label: 'Outline Disabled',
     disabled: true,
-    code: '<app-button [theme]="outline" [label]="Outline Disabled" [disabled]="true"></app-button>',
+    code: '<app-button theme="outline" label="Outline Disabled" [disabled]="true"></app-button>',
   },
 ];
 

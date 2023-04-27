@@ -1,63 +1,15 @@
 @import "/src/app/scss/includes.scss";
 
 button {
-  color: $color-white;
-  border-radius: 6px;
-  font-size: 16px;
-  box-shadow: none !important;
-  padding: 4px 48px 4px 48px;
+  span {
+    font-family: $font-montserrat !important;
+  }
 
   &:disabled {
     cursor: not-allowed;
-    opacity: 0.5;
-  }
-
-  span {
-    font-family: $font-montserrat !important;
   }
 }
 
 .primary {
-  background: $color-primary;
-
-  &:hover {
-    background: $color-primary-hover;
-  }
-}
-
-.custom {
-  background: $color-light-grey;
-  color: $color-text;
-
-  &:hover {
-    background: lighten($color-light-grey, 5%);
-  }
-}
-
-.cancel {
-  background: $color-error;
-
-  &:hover {
-    background: lighten($color-error, 5%);
-  }
-}
-
-.primary-disabled {
-  background: $color-disabled;
-
-  &:hover {
-    background: lighten($color-disabled, 5%);
-  }
-}
-
-.outline {
-  color: $color-primary !important;
-
-  .label {
-    color: $color-primary !important;
-  }
-
-  i {
-    color: $color-primary !important;
-  }
+  background: $color-primary !important;
 }

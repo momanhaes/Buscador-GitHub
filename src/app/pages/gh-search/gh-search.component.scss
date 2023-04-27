@@ -41,7 +41,7 @@
         .input {
           width: 40%;
           display: flex;
-          align-items: center;
+          align-items: baseline;
 
           @include large-and-down {
             width: 100%;

@@ -38,11 +38,10 @@
           <ng-container *ngIf="item.isSearch">
             <div class="label">{{ item.name }}</div>
 
-            <div class="search mb-4">
+            <div class="search">
               <i class="fa fa-search mr-3"></i>
     
               <app-input 
-                [isSearch]="true" 
                 [form]="form" 
                 [type]="item.type" 
                 [label]="item.label"
