@@ -1,12 +1,13 @@
+@use '~@angular/material' as mat;
 @import "app/scss/includes.scss";
 
 @import "~@angular/material/theming";
-@include mat-core();
+@include mat.core();
 
-$gerenciador-primary: mat-palette($mat-indigo);
-$gerenciador-accent: mat-palette($mat-pink, A200, A100, A400);
-$gerenciador-warn: mat-palette($mat-red);
-$gerenciador-theme: mat-light-theme(
+$gerenciador-primary: mat.define-palette(mat.$indigo-palette);
+$gerenciador-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$gerenciador-warn: mat.define-palette(mat.$red-palette);
+$gerenciador-theme: mat.define-light-theme(
   (
     color: (
       primary: $gerenciador-primary,
@@ -16,7 +17,7 @@ $gerenciador-theme: mat-light-theme(
   )
 );
 
-@include angular-material-theme($gerenciador-theme);
+@include mat.all-component-themes($gerenciador-theme);
 
 *,
 *:before,
