@@ -57,7 +57,7 @@
             </div>
 
             <div class="profile-table" *ngIf="isRepo && !isMobile">
-                <app-table [data]="repos"></app-table>
+                <app-table [showPagination]="showPagination" [data]="repos"></app-table>
             </div>
             
             <div class="profile-list" *ngIf="isRepo && isMobile">

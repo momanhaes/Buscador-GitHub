@@ -28,6 +28,7 @@ export class GitHubSearchComponent implements OnInit {
   public userForm!: UntypedFormGroup;
   public repoForm!: UntypedFormGroup;
 
+  public showPagination: boolean = true;
   public isUserLoading: boolean = false;
   public isRepoLoading: boolean = false;
   public isRepo: boolean = false;
@@ -100,6 +101,7 @@ export class GitHubSearchComponent implements OnInit {
   public filterRepos(): void {
     this.repoForm.valueChanges.subscribe((searchTerm) => {
       this.searchTerm = searchTerm.repoControl;
+      this.showPagination = false;
 
       const result: IRepo[] = this.repos.filter(
         (item) =>
@@ -115,6 +117,7 @@ export class GitHubSearchComponent implements OnInit {
 
   public goProfile(): void {
     this.isRepo = false;
+    this.showPagination = true;
   }
 
   public goRepos(user: string): void {

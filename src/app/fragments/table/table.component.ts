@@ -25,6 +25,7 @@ export class TableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatSort) public sort!: MatSort;
 
   @Input() public data!: IRepo[];
+  @Input() public showPagination: boolean = true;
 
   public dataSource!: MatTableDataSource<IRepo>;
   public state = 'ready';
