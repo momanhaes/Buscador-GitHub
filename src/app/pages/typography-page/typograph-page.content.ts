@@ -33,8 +33,8 @@ export const TYPOGRAPHY: ITypography[] = [
     code: '<h6>H6</h6>',
   },
   {
-    name: 'Demonstração',
-    code: '<span>Demonstração</span>',
+    name: 'Span',
+    code: '<span>Span</span>',
   },
   {
     name: 'Parágrafo',
