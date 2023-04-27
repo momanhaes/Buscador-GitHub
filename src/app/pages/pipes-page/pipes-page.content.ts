@@ -49,13 +49,13 @@ export const PIPES: IPipe[] = [
     usage: `{{ cep | cep }}`,
   },
   {
-    name: 'CEL',
+    name: 'Cel',
     type: 'cel',
     value: 21999999999,
     usage: `{{ cel | cel }}`,
   },
   {
-    name: 'TEL',
+    name: 'Tel',
     type: 'tel',
     value: 2199999999,
     usage: `{{ tel | tel }}`,

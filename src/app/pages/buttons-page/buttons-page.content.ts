@@ -28,17 +28,17 @@ export interface ISection {
 
 export const BUTTONS: IButton[] = [
   {
-    theme: 'basic',
-    label: 'Basic',
-    disabled: false,
-    code: '<app-button theme="basic" label="Basic" [disabled]="false"></app-button>',
-  },
-  {
     theme: 'primary',
     label: 'Primary Icon',
     disabled: false,
     code: '<app-button theme="primary" label="Primary Icon" [disabled]="false" [icon]="fa fa-smile-o"></app-button>',
     icon: 'fa fa-smile-o',
+  },
+  {
+    theme: 'basic',
+    label: 'Basic',
+    disabled: false,
+    code: '<app-button theme="basic" label="Basic" [disabled]="false"></app-button>',
   },
   {
     theme: 'accent',
@@ -54,16 +54,16 @@ export const BUTTONS: IButton[] = [
   },
   {
     theme: 'outline',
-    label: 'Outline',
-    disabled: false,
-    code: '<app-button theme="outline" label="Outline" [disabled]="false"></app-button>',
-  },
-  {
-    theme: 'outline',
     label: 'Outline Icon',
     disabled: false,
     code: '<app-button theme="outline" label="Outline Icon" [disabled]="false" [icon]="fa fa-smile-o"></app-button>',
     icon: 'fa fa-smile-o',
+  },
+  {
+    theme: 'outline',
+    label: 'Outline',
+    disabled: false,
+    code: '<app-button theme="outline" label="Outline" [disabled]="false"></app-button>',
   },
   {
     theme: 'primary-disabled',
