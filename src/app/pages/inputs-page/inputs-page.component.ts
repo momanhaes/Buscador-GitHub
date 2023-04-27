@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { LIST_ANIMATION_LATERAL } from 'src/app/animations/list.animation';
 import { ToastyService } from 'src/app/services/toasty.service';
 import { APPEARD } from 'src/app/animations/appeard.animation';
@@ -13,7 +13,7 @@ import { EMAIL_PATTERN } from 'src/app/utils/patterns';
   animations: [APPEARD, LIST_ANIMATION_LATERAL],
 })
 export class InputsPageComponent implements OnInit {
-  public form!: FormGroup;
+  public form!: UntypedFormGroup;
   public state = 'ready';
   public show!: boolean;
 
@@ -28,13 +28,13 @@ export class InputsPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.form = new FormGroup({
-      input: new FormControl(''),
-      search: new FormControl(''),
-      password: new FormControl(''),
-      disabled: new FormControl(''),
-      required: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.pattern(EMAIL_PATTERN)]),
+    this.form = new UntypedFormGroup({
+      input: new UntypedFormControl(''),
+      search: new UntypedFormControl(''),
+      password: new UntypedFormControl(''),
+      disabled: new UntypedFormControl(''),
+      required: new UntypedFormControl('', [Validators.required]),
+      email: new UntypedFormControl('', [Validators.pattern(EMAIL_PATTERN)]),
     });
 
     setTimeout(() => {

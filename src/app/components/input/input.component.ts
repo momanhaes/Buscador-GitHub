@@ -5,7 +5,7 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
 import { APPEARD } from 'src/app/animations/appeard.animation';
 
@@ -21,7 +21,7 @@ export class InputComponent implements OnInit, AfterViewInit {
   public hasError: boolean;
   public state = 'ready';
 
-  @Input() form!: FormGroup;
+  @Input() form!: UntypedFormGroup;
   @Input() required: boolean;
   @Input() disabled: boolean;
   @Input() isSearch: boolean;

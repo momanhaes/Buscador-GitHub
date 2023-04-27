@@ -2,7 +2,7 @@ import Swal from 'sweetalert2';
 import { of, Subscription } from 'rxjs';
 import { ALERT_THEME } from 'src/app/utils/theme';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { APPEARD } from 'src/app/animations/appeard.animation';
 import { GithubService } from 'src/app/services/github.service';
 import { WindowService } from 'src/app/services/window.service';
@@ -25,8 +25,8 @@ export class GitHubSearchComponent implements OnInit {
   public subscribeMobile!: Subscription;
   public repos: IRepo[] = [];
   
-  public userForm!: FormGroup;
-  public repoForm!: FormGroup;
+  public userForm!: UntypedFormGroup;
+  public repoForm!: UntypedFormGroup;
 
   public isUserLoading: boolean = false;
   public isRepoLoading: boolean = false;
@@ -44,8 +44,8 @@ export class GitHubSearchComponent implements OnInit {
   ) { this.isMobile = window.innerWidth <= windowService.widthMobile; }
 
   ngOnInit() {
-    this.userForm = new FormGroup({ userControl: new FormControl('') });
-    this.repoForm = new FormGroup({ repoControl: new FormControl('') });
+    this.userForm = new UntypedFormGroup({ userControl: new UntypedFormControl('') });
+    this.repoForm = new UntypedFormGroup({ repoControl: new UntypedFormControl('') });
 
     this.subscribeMobile = this.windowService.hasMobile.subscribe((hasMobile: boolean) => (this.isMobile = hasMobile));
 
