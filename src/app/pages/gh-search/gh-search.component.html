@@ -7,12 +7,12 @@
                     <p>
                         Digite um usuário do
                         <strong>GitHub</strong>
-                        <i class="fa fa-github ml-1"></i>
+                        <i class="fa fa-github ms-1"></i>
                     </p>
                 </div>
 
                 <div class="input">
-                    <i class="fa fa-search mr-3"></i>
+                    <i class="fa fa-search me-3"></i>
 
                     <app-input 
                         id="input-usuario"
@@ -30,13 +30,13 @@
                 <div class="text">
                     <h1>{{ 'Repositórios de ' + person.name }}</h1>
                     <p><a style="cursor: pointer;" (click)="goProfile()">
-                        <i class="fa fa-undo mr-2"></i> <strong>Clique aqui</strong>
+                        <i class="fa fa-undo me-2"></i> <strong>Clique aqui</strong>
                         </a><span> para voltar ao perfil de </span>'{{ person.login }}'
                     </p>
                 </div>
 
                 <div class="input">
-                    <i class="fa fa-search mr-3"></i>
+                    <i class="fa fa-search me-3"></i>
 
                     <app-input 
                         [form]="repoForm"

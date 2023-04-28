@@ -58,7 +58,7 @@
       <div class="buttons">
         <app-button 
           *ngIf="profile.html_url" 
-          [class.mr-3]="!isMobile" theme="{{ isMobile ? 'outline' : 'primary' }}" 
+          [class.me-3]="!isMobile" theme="{{ isMobile ? 'outline' : 'primary' }}" 
           icon="fa fa-github-alt" 
           label="Ver Perfil" 
           (click)="goTo(profile.html_url)">
