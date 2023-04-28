@@ -42,7 +42,7 @@ export class InputComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.form.valueChanges.pipe(debounceTime(500)).subscribe(() => {
+    this.form?.valueChanges.pipe(debounceTime(500)).subscribe(() => {
       this.hasError = this.form.get(this.control)?.errors && (this.form.get(this.control)?.dirty || this.form.get(this.control)?.touched) ? true : false;
       this.isRequiredError = this.form.get(this.control)?.errors?.required;
       this.isEmailError = this.form.get(this.control)?.errors?.pattern;

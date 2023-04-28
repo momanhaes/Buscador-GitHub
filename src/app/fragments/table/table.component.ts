@@ -51,14 +51,17 @@ export class TableComponent implements AfterViewInit, OnInit {
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-    this.table.dataSource = this.dataSource;
+    if (this.table?.dataSource) { this.table.dataSource = this.dataSource; }
 
-    const paginator = this.paginator._intl;
-    paginator.previousPageLabel = 'Anterior';
-    paginator.nextPageLabel = 'Próximo';
-    paginator.lastPageLabel = 'Último';
-    paginator.firstPageLabel = 'Primeiro';
-    paginator.itemsPerPageLabel = 'Itens por página';
+    const paginator = this.paginator?._intl;
+
+    if (paginator) {
+      paginator.previousPageLabel = 'Anterior';
+      paginator.nextPageLabel = 'Próximo';
+      paginator.lastPageLabel = 'Último';
+      paginator.firstPageLabel = 'Primeiro';
+      paginator.itemsPerPageLabel = 'Itens por página';
+    }
   }
 
   public goTo(url: string): void {

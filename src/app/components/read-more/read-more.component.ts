@@ -24,8 +24,11 @@ export class ReadMoreComponent implements OnInit {
   }
 
   private formatContent(content: string): string {
-    if (this.completeWords)
+    if (!content) return '';
+
+    if (this.completeWords) {
       this.limit = content.substr(0, this.limit).lastIndexOf(' ');
+    }
 
     return `${content.substr(0, this.limit)}...`;
   }
@@ -48,8 +51,9 @@ export class ReadMoreComponent implements OnInit {
   ngOnInit(): void {
     this.nonEditedContent = this.content;
 
-    if (this.nonEditedContent.length <= this.limit)
+    if (this.nonEditedContent?.length <= this.limit) {
       this.showReadMoreButton = false;
+    }
     else {
       this.showReadMoreButton = true;
       this.content = this.formatContent(this.content);

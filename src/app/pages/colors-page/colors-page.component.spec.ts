@@ -1,22 +1,18 @@
-/* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ColorsPageComponent } from './colors-page.component';
 
 describe('ColorsPageComponent', () => {
   let component: ColorsPageComponent;
   let fixture: ComponentFixture<ColorsPageComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [ BrowserAnimationsModule ],
       declarations: [ ColorsPageComponent ]
     })
     .compileComponents();
-  }));
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(ColorsPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

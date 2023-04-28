@@ -1,5 +1,5 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { InputComponent } from './input.component';
 
 describe('InputComponent', () => {
@@ -8,12 +8,11 @@ describe('InputComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [ BrowserAnimationsModule ],
       declarations: [ InputComponent ]
     })
     .compileComponents();
-  });
-
-  beforeEach(() => {
+    
     fixture = TestBed.createComponent(InputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

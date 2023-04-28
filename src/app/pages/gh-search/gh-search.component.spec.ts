@@ -1,22 +1,22 @@
-/* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { GitHubSearchComponent } from './gh-search.component';
 
 describe('GitHubSearchComponent', () => {
   let component: GitHubSearchComponent;
   let fixture: ComponentFixture<GitHubSearchComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [ 
+        BrowserAnimationsModule,
+        HttpClientTestingModule
+      ],
       declarations: [ GitHubSearchComponent ]
     })
     .compileComponents();
-  }));
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(GitHubSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
