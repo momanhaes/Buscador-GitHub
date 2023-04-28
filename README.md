@@ -87,7 +87,7 @@ Abra [http://localhost:4200](http://localhost:4200) em seu navegador.
 
 ## Testes
 
-Foram implementados testes unitários com Jasmine e testes _end-to-end_ com Cypress. Para rodar os testes unitários digite o comando abaixo:
+Foram implementados alguns testes unitários com Jasmine e alguns testes _end-to-end_ com Cypress. Para rodar os testes unitários digite o comando abaixo:
 
 ```sh
 npm run test
