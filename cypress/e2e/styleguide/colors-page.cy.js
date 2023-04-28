@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 context('TESTE DA PÁGINA DE CORES', () => {
-    beforeEach(() => cy.visit('http://localhost:4200/colors'));
+    beforeEach(() => cy.visit('https://mmanhaes-styleguide.netlify.app/colors'));
 
     it('Validando o título da página', () => {
         cy

@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 context('TESTE DA PÁGINA DE TIPOGRAFIA', () => {
-    beforeEach(() => cy.visit('http://localhost:4200/typography'));
+    beforeEach(() => cy.visit('https://mmanhaes-styleguide.netlify.app/typography'));
 
     it('Validando o título da página', () => {
         cy
