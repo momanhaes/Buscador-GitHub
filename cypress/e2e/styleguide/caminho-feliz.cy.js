@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 context('TESTE CAMINHO FELIZ', () => {
-    beforeEach(() => cy.visit('http://localhost:4200/home'));
+    beforeEach(() => cy.visit('https://mmanhaes-styleguide.netlify.app/home'));
 
     it('Testando e garantindo que o formulário tem um título', () => {
         cy
@@ -19,7 +19,7 @@ context('TESTE CAMINHO FELIZ', () => {
 
     it('Acessando o input e digitando um usuário válido', () => {
         cy
-            .visit('http://localhost:4200/gh-search')
+            .visit('https://mmanhaes-styleguide.netlify.app/gh-search')
             .get('[data-cy="input-usuario"]')
             .as('inputUsuario')
             .type('momanhaes');
@@ -27,7 +27,7 @@ context('TESTE CAMINHO FELIZ', () => {
 
     it('Clicando no botão para acessar os repositórios', () => {
         cy
-            .visit('http://localhost:4200/gh-search')
+            .visit('https://mmanhaes-styleguide.netlify.app/gh-search')
             .get('[data-cy="input-usuario"]')
             .as('inputUsuario')
             .type('momanhaes')
