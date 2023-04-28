@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { APPEARD } from 'src/app/animations/appeard.animation';
 import { LIST_ANIMATION_LATERAL } from 'src/app/animations/list.animation';
-import { ITypography, TYPOGRAPHY } from './typograph-page.content';
+import { ITypography, TYPOGRAPHY } from './typography-page.content';
 import { ToastyService } from 'src/app/services/toasty.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class TypographyPageComponent implements OnInit {
 
   constructor(private toasty: ToastyService) {}
 
-  public get typograph(): ITypography[] {
+  public get typography(): ITypography[] {
     return TYPOGRAPHY;
   }
 

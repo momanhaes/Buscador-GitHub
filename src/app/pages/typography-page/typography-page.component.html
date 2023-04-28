@@ -3,14 +3,14 @@
     <div class="content">
 
       <div class="text">
-        <h1 class="title">Typograph</h1>
+        <h1 id="typography-title" class="title">Typography</h1>
         <p>Abaixo os textos</p>
       </div>
 
-      <div class="row" *ngIf="show" [@listAnimation]="typograph.length">
-        <div class="col-6" *ngFor="let item of typograph">
-          <h1 *ngIf="item.name === 'Título'" class="title">Título</h1>
-          <div *ngIf="item.name !== 'Título'" [innerHTML]="item.code"></div>
+      <div class="row" *ngIf="show" [@listAnimation]="typography.length">
+        <div class="col-6" *ngFor="let item of typography">
+          <h1 *ngIf="item.name === 'Título'" [id]="item.id" class="title">Título</h1>
+          <div *ngIf="item.name !== 'Título'" [id]="item.id" [innerHTML]="item.code"></div>
 
           <pre>
             {{ item.code }}
