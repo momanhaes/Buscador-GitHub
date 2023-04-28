@@ -67,7 +67,8 @@
         <app-button 
           *ngIf="profile.login && !isLoading" 
           theme="{{ isMobile ? 'outline' : 'primary' }}"
-          icon="fa fa-code-fork" 
+          icon="fa fa-code-fork"
+          data-cy="button-repos" 
           label="Ver Repositórios" 
           (click)="goRepos(profile.login)">
         </app-button>
