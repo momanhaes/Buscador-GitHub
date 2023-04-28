@@ -3,7 +3,7 @@
     <div class="content">
 
       <div class="text">
-        <h1 class="title">Colors</h1>
+        <h1 id="colors-title" class="title">Colors</h1>
         <p>Abaixo a paleta de cores disponível</p>
       </div>
 
@@ -18,8 +18,8 @@
               matTooltip="Clique para copiar">
             </div>
 
-            <h4 class="name">${{ color.name }}</h4>
-            <span class="hex">{{ color.hex }}</span>
+            <h4 [id]="color.name" class="name">${{ color.name }}</h4>
+            <span id="{{ 'hex-' + color.name }}" class="hex">{{ color.hex }}</span>
           </div>
         </div>
       </div>
