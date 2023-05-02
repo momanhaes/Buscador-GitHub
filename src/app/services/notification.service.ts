@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 
 @Injectable({ providedIn: 'root' })
 export class NotificationService {
-  public notifier = new EventEmitter<any>();
+  public notifier = new EventEmitter();
   public alertTheme = ALERT_THEME;
 
   constructor(private router: Router) {}

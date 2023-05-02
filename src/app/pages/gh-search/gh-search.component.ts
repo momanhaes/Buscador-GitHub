@@ -48,7 +48,7 @@ export class GitHubSearchComponent implements OnInit {
     this.userForm = new UntypedFormGroup({ userControl: new UntypedFormControl('') });
     this.repoForm = new UntypedFormGroup({ repoControl: new UntypedFormControl('') });
 
-    this.subscribeMobile = this.windowService.hasMobile.subscribe((hasMobile: boolean) => (this.isMobile = hasMobile));
+    this.subscribeMobile = this.windowService.isMobile.subscribe((isMobile: boolean) => (this.isMobile = isMobile));
 
     this.getUser();
     this.filterRepos();
@@ -90,9 +90,9 @@ export class GitHubSearchComponent implements OnInit {
           return err;
         })
       )
-      .subscribe((person: any) => {
+      .subscribe((person) => {
         setTimeout(() => {
-          this.person = person;
+          this.person = person as IProfile;
           this.isUserLoading = false;
         }, 1000);
       });

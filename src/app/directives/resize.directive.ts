@@ -8,9 +8,9 @@ export class ResizeDirective {
   constructor(private win: WindowService) {}
 
   @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    const width = event.target.innerWidth;
-    this.win.hasMobile.emit(width <= this.win.widthMobile);
+  onResize(event: UIEvent) {
+    const target = event.target as Window;
+    this.win.isMobile.emit(target.innerWidth <= this.win.widthMobile);
   }
 }
  
