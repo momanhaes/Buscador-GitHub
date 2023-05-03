@@ -17,7 +17,7 @@ context('TESTE DA PÁGINA DE CORES', () => {
             .contains('color-primary')
             .get('[id="hex-color-primary"]')
             .as('hexColorPrimary')
-            .contains('#004D40');
+            .contains('#1da1f2');
     });
 
     it('Validando se a cor secundária foi carregada', () => {
@@ -27,7 +27,7 @@ context('TESTE DA PÁGINA DE CORES', () => {
             .contains('color-secondary')
             .get('[id="hex-color-secondary"]')
             .as('hexColorSecondary')
-            .contains('#FFF9C4');
+            .contains('#bbdefb');
     });
 
     it('Validando se a cor terciária foi carregada', () => {
@@ -37,7 +37,7 @@ context('TESTE DA PÁGINA DE CORES', () => {
             .contains('color-terciery')
             .get('[id="hex-color-terciery"]')
             .as('hexColorTerciery')
-            .contains('#c89666');
+            .contains('#657786');
     });
 
     it('Validando se a cor do hover foi carregada', () => {
@@ -47,7 +47,7 @@ context('TESTE DA PÁGINA DE CORES', () => {
             .contains('color-primary-hover')
             .get('[id="hex-color-primary-hover"]')
             .as('hexColorPrimaryHover')
-            .contains('#00796B');
+            .contains('#2196f3');
     });
 
     it('Validando se a cor branca foi carregada', () => {
@@ -67,17 +67,7 @@ context('TESTE DA PÁGINA DE CORES', () => {
             .contains('color-black')
             .get('[id="hex-color-black"]')
             .as('hexColorBlack')
-            .contains('#000000');
-    });
-
-    it('Validando se a cor do background foi carregada', () => {
-        cy
-            .get('[id="color-grey-bg"]')
-            .as('colorGreyBg')
-            .contains('color-grey-bg')
-            .get('[id="hex-color-grey-bg"]')
-            .as('hexColorGreyBg')
-            .contains('#f1f1f1');
+            .contains('#14171a');
     });
 
     it('Validando se a cor verde foi carregada', () => {

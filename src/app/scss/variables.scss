@@ -1,3 +1,24 @@
+// Variables
+:root {
+    --color-primary: #1da1f2;
+    --color-secondary: #bbdefb;
+    --color-terciery: #657786;
+    --color-primary-hover: #2196f3;
+    --color-body: #f5f8fa;
+    --color-grey-bg: #e1e8ed;
+    --color-text: #14171a;
+    --color-shadow: rgba(100, 100, 111, 0.2);
+    --color-bar: rgba(0, 0, 0, 0.075);
+
+    .dark-theme {
+        --color-body: #14171a;
+        --color-grey-bg: #141d26;
+        --color-text: #ffffff;
+        --color-shadow: rgba(0, 0, 0, 0.2);
+        --color-bar: rgba(0, 0, 0, 0.2);
+    }
+}
+
 // Breakpoints
 $breakpoint-xsmall: 0;
 $breakpoint-small: 576px;
@@ -9,35 +30,25 @@ $breakpoint-xlarge: 1200px;
 $breakpoint-table: 1246px;
 
 // Colors
-$color-primary: #004d40;
-$color-secondary: #fff9c4;
-$color-terciery: #c89666;
-$color-primary-hover: #00796B;
+$color-primary: var(--color-primary);
+$color-secondary: var(--color-secondary);
+$color-terciery: var(--color-terciery);
+$color-primary-hover: var(--color-primary-hover);
+$color-grey-bg: var(--color-grey-bg);
+$color-background: var(--color-body);
+$color-shadow: var(--color-shadow);
+$color-text: var(--color-text);
+$color-bar: var(--color-bar);
 $color-white: #ffffff;
 $color-black: #000000;
 $color-grey: #717171;
-$color-grey-button: #9a9a99;
-$color-light-grey: #cecece;
-$color-grey-bg: #f1f1f1;
-$color-light-pink: #ffb7b7;
-$color-light-yellow: #ffffcc;
-$color-light-black: #1f272e;
-$color-medium-black: #282828;
 $color-green: #28c18d;
 $color-yellow: #f9cc54;
-$color-red: #ff0000;
-$color-blue: #457ff0;
-$color-error: #d23b3b;
-$color-red-tomato: #ff6347;
-$color-light-red: #ff7573;
+$color-red: #d23b3b;
+$color-blue: #1da1f2;
 $color-danger: #e73f5d;
 $color-danger-hover: #d73754;
 $color-disabled: #cbcbcb;
-$color-background: $color-white;
-$color-background-secondary: #f5f5ef;
-$color-card: #313a46;
-$color-text: #323232;
-$color-shadow: rgba(0, 0, 0, 0.2);
 
 // Grid
 $grid-columns: 12;

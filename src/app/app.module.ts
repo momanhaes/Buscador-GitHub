@@ -68,6 +68,7 @@ import { WindowService } from './services/window.service';
 import { GithubService } from './services/github.service';
 import { CollapsibleService } from './services/collapsible.service';
 import { NotificationService } from './services/notification.service';
+import { LocalStorageService } from './services/local-storage.service';
 import { SessionStorageService } from './services/session-storage.service';
 
 // INTERNAL IMPORTS
@@ -78,6 +79,7 @@ registerLocaleData(localePt, 'pt');
 
 const SERVICES = [
   { provide: LOCALE_ID, useValue: 'pt' },
+  LocalStorageService,
   SessionStorageService,
   NotificationService,
   CollapsibleService,
@@ -105,7 +107,7 @@ const FRAGMENTS = [
   HeaderComponent,
   FooterComponent,
   SidebarComponent,
-  ProfileComponent
+  ProfileComponent,
 ];  
 
 const PAGES = [

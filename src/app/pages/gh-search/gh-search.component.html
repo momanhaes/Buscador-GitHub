@@ -28,7 +28,7 @@
 
             <div class="core" *ngIf="isRepo" [@appeard]="state">
                 <div class="text">
-                    <h1>{{ 'Repositórios de ' + person.name }}</h1>
+                    <h1 *ngIf="person?.name">{{ 'Repositórios de ' + person.name }}</h1>
                     <p><a style="cursor: pointer;" (click)="goProfile()">
                         <i class="fa fa-undo me-2"></i> <strong>Clique aqui</strong>
                         </a><span> para voltar ao perfil de </span>'{{ person.login }}'

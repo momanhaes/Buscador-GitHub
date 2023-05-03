@@ -4,6 +4,14 @@ div {
   padding: 1rem;
 }
 
+table {
+  background-color: $color-background !important;
+}
+
+mat-paginator {
+  background-color: $color-background !important; 
+}
+
 .full-width-table {
   width: 100%;
 
