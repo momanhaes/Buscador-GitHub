@@ -14,7 +14,7 @@
             margin: 24px 0 24px 0;
             border: 0px !important;
             background: $color-background;
-            box-shadow: 2px 4px 8px 0 $color-shadow;
+            box-shadow: 0px 8px 24px $color-shadow;
 
             .text {
                 margin-bottom: 1rem;
@@ -22,7 +22,7 @@
                 .title {
                     font-weight: bold;
                     color: $color-primary !important;
-                    border-bottom: 1px solid rgba(0, 0, 0, 0.075);
+                    border-bottom: 1px solid $color-bar;
                 }
             }
 

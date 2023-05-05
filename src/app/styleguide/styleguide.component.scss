@@ -10,7 +10,6 @@
 
     .sidebar {
         @include z-index("sky");
-        background: $color-background;
         padding: 80px 15px;
         width: 200px;
 

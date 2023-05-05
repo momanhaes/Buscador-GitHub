@@ -6,7 +6,6 @@ import { ComponentsModule } from './components/components.module';
 import { FragmentsModule } from './fragments/fragments.module';
 
 // SERVICES
-import { ToastyService } from './services/toasty.service';
 import { WindowService } from './services/window.service';
 import { GithubService } from './services/github.service';
 import { CollapsibleService } from './services/collapsible.service';
@@ -24,7 +23,6 @@ const SERVICES = [
   SessionStorageService,
   NotificationService,
   CollapsibleService,
-  ToastyService,
   WindowService,
   GithubService
 ];
