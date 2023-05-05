@@ -1,0 +1,20 @@
+<div class="root" [@appeard]="state">
+  <div class="wrapper">
+
+    <div class="sidebar">
+      <div class="sticky">
+        <div [@listAnimation]="content.length">
+          <div *ngFor="let page of content" [routerLink]="page.route" class="button" routerLinkActive="button--active">
+            <i [class]="page.icon"></i>
+            <label>{{ page.label }}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+</div>

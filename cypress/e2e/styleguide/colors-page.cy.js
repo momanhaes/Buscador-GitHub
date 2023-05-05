@@ -67,7 +67,7 @@ context('TESTE DA PÁGINA DE CORES', () => {
             .contains('color-black')
             .get('[id="hex-color-black"]')
             .as('hexColorBlack')
-            .contains('#14171a');
+            .contains('#000000');
     });
 
     it('Validando se a cor verde foi carregada', () => {

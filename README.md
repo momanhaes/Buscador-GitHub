@@ -1,6 +1,6 @@
-# Styleguide
+# Portal Matheus Manhães
 
-Bem-vindo ao Styleguide! Neste projeto foi implementado um buscador de usuários do GitHub, mas a ideia do projeto é ser algo além de um 'repo-search'. Foi implementado um menu de componentes úteis para que o projeto possa ser usado como modelo de laboratório para implementações de estilos, testes de bibliotecas, implementações de testes unitários e e2e, aplicações de boas práticas e padrões de projetos.
+Bem-vindo ao Portal Matheus Manhães! Neste projeto foi implementado um buscador de usuários do GitHub, mas a ideia do projeto é ser algo além de um 'repo-search'. Foi implementado um menu de componentes úteis para que o projeto possa ser usado como modelo de laboratório para implementações de estilos, testes de bibliotecas, implementações de testes unitários e e2e, aplicações de boas práticas e padrões de projetos.
 
 ## Tecnologias utilizadas
 O projeto foi desenvolvido com o _framework_ Angular na versão 15.
@@ -49,35 +49,35 @@ Abra [http://localhost:4200](http://localhost:4200) em seu navegador.
 
 * Página de acesso ao projeto do buscador de repositórios do GitHub.
 
-`/typography`
+`styleguide/typography`
 
 * Página do _styleguide_ referente a tipografia do projeto.
 
-`/colors`
+`styleguide/colors`
 
 * Página do _styleguide_ referente a paleta de cores do projeto.
 
-`/inputs`
+`styleguide/inputs`
 
 * Página do _styleguide_ referente aos _inputs_ do projeto.
 
-`/buttons`
+`styleguide/buttons`
 
 * Página do _styleguide_ referente aos botões do Angular Material implementados no projeto.
 
-`/tables`
+`styleguide/tables`
 
 * Página do _styleguide_ referente às tabelas do Angular Material implementadas no projeto.
 
-`/items`
+`styleguide/items`
 
 * Página do _styleguide_ referente aos itens _(label + value)_ do projeto.
 
-`/icons`
+`styleguide/icons`
 
 * Página do _styleguide_ referente aos ícones do font-awesome, de svgs e de imagens do projeto.
 
-`/pipes`
+`styleguide/pipes`
 
 * Página do _styleguide_ referente aos _pipes_ do Angular implementados no projeto.
 

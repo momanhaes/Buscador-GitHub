@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { APPEARD } from 'src/app/animations/appeard.animation';
+import { APPEARD } from 'src/app/shared/animations/appeard.animation';
 
 @Component({
   selector: 'app-not-found',

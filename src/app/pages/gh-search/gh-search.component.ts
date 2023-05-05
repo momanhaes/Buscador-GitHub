@@ -1,12 +1,12 @@
 import Swal from 'sweetalert2';
 import { of, Subscription } from 'rxjs';
-import { ALERT_THEME } from 'src/app/utils/theme';
 import { Component, OnInit } from '@angular/core';
+import { ALERT_THEME } from 'src/app/shared/utils/theme';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
-import { APPEARD } from 'src/app/animations/appeard.animation';
-import { GithubService } from 'src/app/services/github.service';
-import { WindowService } from 'src/app/services/window.service';
-import { IProfile, IRepo } from 'src/app/fragments/profile/profile.interface';
+import { APPEARD } from 'src/app/shared/animations/appeard.animation';
+import { GithubService } from 'src/app/shared/services/github.service';
+import { WindowService } from 'src/app/shared/services/window.service';
+import { IProfile, IRepo } from 'src/app/shared/fragments/profile/profile.interface';
 import {
   catchError,
   debounceTime,

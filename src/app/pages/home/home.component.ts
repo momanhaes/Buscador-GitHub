@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { APPEARD } from 'src/app/animations/appeard.animation';
-import { LIST_ANIMATION_LATERAL } from 'src/app/animations/list.animation';
+import { APPEARD } from 'src/app/shared/animations/appeard.animation';
+import { LIST_ANIMATION_LATERAL } from 'src/app/shared/animations/list.animation';
 
 @Component({
   selector: 'app-home',
