@@ -14,18 +14,24 @@ import { Subscription } from 'rxjs';
 })
 export class HeaderComponent implements OnInit {
   public subscribeMobile!: Subscription;
-  public themeIcon!: { icon: string; label: string };
-  public isMobile!: boolean;
+  public themeIcon: { icon: string; label: string };
+  public isMobile: boolean;
   public state = 'ready';
 
   constructor(
     private windowService: WindowService,
     private localStorageService: LocalStorageService
-  ) { this.isMobile = window.innerWidth <= windowService.widthMobile; }
+  ) {
+    this.isMobile = window.innerWidth <= windowService.widthMobile;
+    this.themeIcon = { icon: 'fa fa-sun-o fa-2x', label: ETema.LIGHT };
+  }
 
   ngOnInit() {
     this.subscribeMobile = this.windowService.isMobile.subscribe((isMobile: boolean) => (this.isMobile = isMobile));
+    this.verifyTheme();
+  }
 
+  public verifyTheme() {
     if (this.localStorageService.get(KeyType.TEMA)) {
       this.themeIcon = this.localStorageService.get(KeyType.TEMA);
 
