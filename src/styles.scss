@@ -1,6 +1,8 @@
 @use "@angular/material" as mat;
+
 @import "app/scss/includes.scss";
 @import "@angular/material/theming";
+
 @include mat.all-component-typographies();
 @include mat.core();
 
@@ -128,6 +130,22 @@ a {
   position: absolute;
   left: 50%;
   top: 50%;
+}
+
+.cdk-overlay-container {
+  z-index: 10000 !important;
+}
+
+.mat-mdc-menu-content {
+  background-color: $color-background !important;
+
+  button {
+    font-family: $font-montserrat !important;
+
+    i {
+      margin-right: 6px;
+    }
+  }
 }
 
 .swal2-title {

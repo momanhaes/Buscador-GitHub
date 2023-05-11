@@ -9,36 +9,24 @@
     @include z-index("universe");
     background: $color-background;
     box-shadow: 0 1px 15px $color-shadow;
-    height: 60px;
+    height: 65px;
 
     .content {
       @include between;
-      margin: 1.2rem;
+      margin: 12px 0;
 
-      .link {
+      @include large-and-up {
+        margin: 12px;
+      }
+
+      .menu {
         @include start;
-        cursor: pointer;
+        font-family: $font-montserrat !important;
 
-        @include large-and-up {
-          &:hover {
-            font-weight: bold;
-            color: $color-primary;
-          }
-        }
-
-        i {
-          font-size: 20px;
-          margin-right: 0.5rem;
+        .button-menu {
+          @include start;
         }
       }
-    }
-
-    a {
-      color: $color-text;
-      font-size: 1rem;
-      font-weight: bold;
-      text-decoration: none;
-      cursor: default;
     }
   }
 

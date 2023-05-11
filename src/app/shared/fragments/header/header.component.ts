@@ -3,7 +3,7 @@ import { WindowService } from '../../services/window.service';
 import { APPEARD } from 'src/app/shared/animations/appeard.animation';
 import { LIST_ANIMATION_LATERAL } from 'src/app/shared/animations/list.animation';
 import { KeyType, LocalStorageService } from '../../services/local-storage.service';
-import { ETema } from './header.content';
+import { ETema, HEADER_CONTENT, IContent } from './header.content';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -15,6 +15,7 @@ import { Subscription } from 'rxjs';
 export class HeaderComponent implements OnInit {
   public subscribeMobile!: Subscription;
   public themeIcon: { icon: string; label: string };
+  public content: IContent[] = HEADER_CONTENT;
   public isMobile: boolean;
   public state = 'ready';
 
@@ -23,7 +24,7 @@ export class HeaderComponent implements OnInit {
     private localStorageService: LocalStorageService
   ) {
     this.isMobile = window.innerWidth <= windowService.widthMobile;
-    this.themeIcon = { icon: 'fa fa-sun-o fa-2x', label: ETema.LIGHT };
+    this.themeIcon = { icon: 'light_mode', label: ETema.LIGHT };
   }
 
   ngOnInit() {
@@ -43,7 +44,7 @@ export class HeaderComponent implements OnInit {
 
   public toggle() {
     document.body.classList.toggle('dark-theme');
-    this.themeIcon = this.themeIcon.label === ETema.LIGHT ? { icon: 'fa fa-moon-o fa-2x', label: ETema.DARK } : { icon: 'fa fa-sun-o fa-2x', label: ETema.LIGHT };
+    this.themeIcon = this.themeIcon.label === ETema.LIGHT ? { icon: 'dark_mode', label: ETema.DARK } : { icon: 'light_mode', label: ETema.LIGHT };
     this.localStorageService.set(KeyType.TEMA, this.themeIcon);
   }
 }
