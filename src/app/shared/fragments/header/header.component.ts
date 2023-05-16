@@ -13,9 +13,9 @@ import { Subscription } from 'rxjs';
   animations: [APPEARD, LIST_ANIMATION_LATERAL],
 })
 export class HeaderComponent implements OnInit {
-  public subscribeMobile!: Subscription;
   public themeIcon: { icon: string; label: string };
   public content: IContent[] = HEADER_CONTENT;
+  public subscribeMobile!: Subscription;
   public isMobile: boolean;
   public state = 'ready';
 
@@ -32,14 +32,23 @@ export class HeaderComponent implements OnInit {
     this.verifyTheme();
   }
 
-  public verifyTheme() {
-    if (this.localStorageService.get(KeyType.TEMA)) {
-      this.themeIcon = this.localStorageService.get(KeyType.TEMA);
+  public hasTheme(): boolean {
+    return this.localStorageService.has(KeyType.TEMA);
+  }
 
-      if (this.themeIcon.label === ETema.DARK) {
-        document.body.classList.add('dark-theme');
-      }
+  public verifyTheme() {
+    if (!this.hasTheme()) { return; }
+
+    const tema = this.localStorageService.get(KeyType.TEMA);
+    this.themeIcon = tema;
+
+    if (this.themeIcon.label === ETema.DARK) {
+      document.body.classList.add('dark-theme');
     }
+  }
+
+  public themeTooltip(): string {
+    return this.themeIcon.label === ETema.LIGHT ? 'Mudar para tema escuro' : 'Mudar para tema claro';
   }
 
   public toggle() {

@@ -4,7 +4,13 @@
       <div class="content">
 
         <div class="menu">
-          <button [matMenuTriggerFor]="menu" mat-mini-fab color="basic">
+          <button 
+            [matMenuTriggerFor]="menu" 
+            matTooltipPosition="left" 
+            matTooltip="Menu" 
+            color="basic"
+            mat-mini-fab>
+
             <mat-icon>menu</mat-icon>
           </button>
 
@@ -18,7 +24,13 @@
           </mat-menu>
         </div>
 
-        <button (click)="toggle()" mat-mini-fab color="basic">
+        <button 
+          [matTooltip]="themeTooltip()" 
+          matTooltipPosition="left" 
+          (click)="toggle()"
+          color="basic"
+          mat-mini-fab>
+
           <mat-icon>{{ themeIcon.icon }}</mat-icon>
         </button>
 

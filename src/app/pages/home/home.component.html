@@ -20,7 +20,7 @@
 
       <div class="buttons">
         <ng-container *ngFor="let item of content">
-          <button (click)="goTo(item.link)" [color]="item.color" mat-mini-fab>
+          <button (click)="goTo(item.link)" [color]="item.color" [matTooltip]="item.tooltip" mat-mini-fab>
             <img class="svg" [src]="item.svg">
           </button>
         </ng-container>

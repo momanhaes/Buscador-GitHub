@@ -140,10 +140,13 @@ a {
   background-color: $color-background !important;
 
   button {
-    font-family: $font-montserrat !important;
+    span {
+      font-family: $font-montserrat !important;
+    }
 
     i {
-      margin-right: 6px;
+      margin-right: 12px;
+      font-size: 18px;
     }
   }
 }

@@ -12,7 +12,7 @@ O projeto foi desenvolvido com o _framework_ Angular na versão 15.
 * Jasmine e Cypress
 
 ## Informações gerais
-O projeto está hospedado no Netlify, ou seja, caso queria acessá-lo por uma URL pública, abra [https://mmanhaes-styleguide.netlify.app/home](https://mmanhaes-styleguide.netlify.app/home) em seu navegador.
+O projeto está hospedado no Netlify, ou seja, caso queria acessá-lo por uma URL pública, abra [https://mmanhaes-styleguide.netlify.app/home](https://portal-mmanhaes.netlify.app) em seu navegador.
 
 Caso prefira rodar localmente na sua máquina, siga os procedimentos abaixo.
 
@@ -43,7 +43,7 @@ Abra [http://localhost:4200](http://localhost:4200) em seu navegador.
 
 `/home`
 
-* Página inicial de apresentação do projeto.
+* Página inicial.
 
 `/gh-search`
 
