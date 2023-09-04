@@ -1,21 +1,21 @@
 <div class="root" [@appeard]="state">
   <div class="container-fluid">
     <div class="content">
-
       <div class="text">
         <h1 class="title">Buttons</h1>
         <p>Abaixo exemplos de botões</p>
       </div>
 
-      <div class="row" *ngIf="show" [@list]="content.length">
-        <div class="col-12 col-md-6 mb-3" *ngFor="let item of content">
+      <div class="row" *ngIf="show" [@list]="buttons.length">
+        <div class="col-12 col-md-6 mb-3" *ngFor="let item of buttons">
           <div class="label">{{ item.label }}</div>
 
-          <app-button 
+          <app-button
             [icon]="item.icon"
-            [theme]="item.theme" 
-            [label]="item.label" 
-            [disabled]="item.disabled">
+            [theme]="item.theme"
+            [label]="item.label"
+            [disabled]="item.disabled"
+          >
           </app-button>
 
           <pre>
@@ -33,6 +33,70 @@
         </div>
       </div>
 
+      <div class="bar"></div>
+
+      <div class="row" *ngIf="show" [@list]="collapsiblesSections.length">
+        <div class="col-12 mb-3" *ngFor="let section of collapsiblesSections">
+          <div class="label">{{ section.name }}</div>
+
+          <div
+            class="collapsible-section"
+            [class.collapsible-section--primary]="section.theme === 'primary'"
+          >
+            <ng-container *ngFor="let collapsible of section.collapsibles">
+              <app-collapsible
+                [theme]="section.theme"
+                [group]="collapsible.group"
+              >
+                <div header>
+                  <span>{{ collapsible.header }}</span>
+                </div>
+
+                <div content>
+                  <p>{{ collapsible.content }}</p>
+                </div>
+              </app-collapsible>
+            </ng-container>
+          </div>
+
+          <pre>
+              {{ section.code }}
+  
+              <mat-icon 
+              (click)="clip(section.code)"
+              matTooltipPosition="above" 
+              matTooltip="Clique para copiar">
+              content_copy
+            </mat-icon>
+          </pre>
+        </div>
+      </div>
+
+      <div class="bar"></div>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="label">Read More</div>
+
+          <app-read-more
+            [content]="loremIpsum"
+            [limit]="300"
+            [completeWords]="true"
+          >
+          </app-read-more>
+
+          <pre>
+            {{ getReadMoreCode() }}
+
+            <mat-icon 
+            (click)="clip(getReadMoreCode())"
+              matTooltipPosition="above" 
+              matTooltip="Clique para copiar">
+              content_copy
+            </mat-icon>
+          </pre>
+        </div>
+      </div>
     </div>
   </div>
 </div>

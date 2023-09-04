@@ -15,6 +15,7 @@ import { GithubService } from './services/github.service';
 import { CEPService } from './services/cep.service';
 import { FormatterLib } from './lib/formatter.lib';
 import { HelperLib } from './lib/helper.lib';
+import { CollapsibleService } from './services/collapsible.service';
 
 const MODULES = [
   ComponentsModule,
@@ -24,6 +25,7 @@ const MODULES = [
 const SERVICES = [
   LocalStorageService,
   NotificationService,
+  CollapsibleService,
   CalculatorService,
   CustomerService,
   WindowService,

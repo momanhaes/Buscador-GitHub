@@ -1,60 +1,84 @@
 @import "/src/app/scss/includes.scss";
 
 .root {
-    @include grid(32);
+  @include grid(32);
 
-    .container-fluid {
-        @include grid-column-span(32);
-        margin-bottom: 32px;
-        margin-top: 32px;
+  .container-fluid {
+    @include grid-column-span(32);
+    margin-bottom: 32px;
+    margin-top: 32px;
 
-        .content {
-            padding: 64px;
-            border-radius: 0.8rem;
-            margin: 24px 0 24px 0;
-            border: 0px !important;
-            background: $color-background;
-            box-shadow: 0px 8px 24px $color-shadow;
+    .content {
+      padding: 64px;
+      border-radius: 0.8rem;
+      margin: 24px 0 24px 0;
+      border: 0px !important;
+      background: $color-background;
+      box-shadow: 0px 8px 24px $color-shadow;
 
-            .text {
-                margin-bottom: 1rem;
+      .text {
+        margin-bottom: 1rem;
 
-                .title {
-                    font-weight: bold;
-                    color: $color-primary !important;
-                    border-bottom: 1px solid $color-border;
-                }
-            }
-
-            .label {
-                @include start;
-                font-weight: bold;
-                margin-bottom: 5px;
-                color: $color-primary;
-            }
-
-            @include large-and-down {
-                padding: 32px;
-            }
-
-            mat-icon {
-                cursor: pointer;
-                margin-left: 12px;
-                color: $color-primary !important;
-            }
-
-            pre {
-                @include between;
-                margin: 12px 0 12px 0;
-                white-space: inherit;
-                background: $color-secondary-bg;
-                padding: 15px;
-                border-radius: 3px;
-
-                mat-icon {
-                    overflow: visible;
-                }
-            }
+        .title {
+          font-weight: bold;
+          color: $color-primary !important;
+          border-bottom: 1px solid $color-border;
         }
+      }
+
+      .label {
+        @include start;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: $color-primary;
+      }
+
+      @include large-and-down {
+        padding: 32px;
+      }
+
+      mat-icon {
+        cursor: pointer;
+        margin-left: 12px;
+        color: $color-primary !important;
+      }
+
+      pre {
+        @include between;
+        margin: 12px 0 12px 0;
+        white-space: inherit;
+        background: $color-secondary-bg;
+        padding: 15px;
+        border-radius: 3px;
+
+        mat-icon {
+          overflow: visible;
+        }
+      }
+
+      .bar {
+        margin: 1.5rem 0;
+        border-bottom: 1px solid $color-border;
+      }
+
+      .collapsible-section {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+
+        span,
+        p {
+          font-size: 14px;
+        }
+
+        &--primary {
+          background-color: $color-primary;
+
+          span,
+          p {
+            color: $color-white !important;
+          }
+        }
+      }
     }
+  }
 }

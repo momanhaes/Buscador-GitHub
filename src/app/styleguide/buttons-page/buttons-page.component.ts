@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { APPEARD } from 'src/app/shared/animations/appeard.animation';
 import { LIST_ANIMATION_LATERAL } from 'src/app/shared/animations/list.animation';
-import { IStyleguideButton } from 'src/app/shared/interfaces/styleguide.interface';
+import { IStyleguideButton, IStyleguideCollapsibleSection } from 'src/app/shared/interfaces/styleguide.interface';
 import { StyleguideService } from '../../shared/services/styleguide.service';
-import { BUTTONS } from '../styleguide.content';
+import { BUTTONS, COLLAPSIBLES_SECTIONS, LOREM_IPSUM } from '../styleguide.content';
 
 @Component({
   selector: 'app-buttons-page',
@@ -12,11 +12,13 @@ import { BUTTONS } from '../styleguide.content';
   animations: [APPEARD, LIST_ANIMATION_LATERAL],
 })
 export class ButtonsPageComponent implements OnInit {
-  public content: IStyleguideButton[] = BUTTONS;
+  public buttons: IStyleguideButton[] = BUTTONS;
+  public collapsiblesSections: IStyleguideCollapsibleSection[] = COLLAPSIBLES_SECTIONS;
+  public loremIpsum: string = LOREM_IPSUM;
   public state = 'ready';
   public show!: boolean;
 
-  constructor(private styleguideService: StyleguideService) {}
+  constructor(private styleguideService: StyleguideService) { }
   ngOnInit() {
     setTimeout(() => {
       this.show = true;
@@ -25,5 +27,9 @@ export class ButtonsPageComponent implements OnInit {
 
   public clip(code: string): void {
     this.styleguideService.clip(code);
+  }
+
+  public getReadMoreCode(): string {
+    return `<app-read-more [content]="loremIpsum" [limit]="300" [completeWords]="true"></app-read-more>`;
   }
 }

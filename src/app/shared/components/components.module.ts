@@ -29,7 +29,9 @@ import { ButtonComponent } from './button/button.component';
 import { ToastyComponent } from './toasty/toasty.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { ReadMoreComponent } from './read-more/read-more.component';
 import { ToastyListComponent } from './toasty-list/toasty-list.component';
+import { CollapsibleComponent } from './collapsible/collapsible.component';
 import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
 
 // DIRECTIVES
@@ -65,7 +67,9 @@ const COMPONENTS = [
   DialogComponent,
   CepComponent,
   ToastyListComponent,
-  BottomSheetComponent
+  BottomSheetComponent,
+  CollapsibleComponent,
+  ReadMoreComponent
 ];
 
 const DIRECTIVES = [
@@ -93,8 +97,8 @@ const MODULES = [
     ...MATERIAL_MODULES
   ],
   declarations: [
-    ...COMPONENTS, 
+    ...COMPONENTS,
     ...DIRECTIVES
   ],
 })
-export class ComponentsModule {}
+export class ComponentsModule { }

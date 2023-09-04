@@ -12,6 +12,27 @@ export interface IStyleguideButton {
   icon?: string;
 }
 
+export interface IStyleguideCollapsible {
+  header: string;
+  content: string;
+  group: boolean;
+}
+
+export interface IStyleguideCollapsibleSection {
+  name: string;
+  theme: string;
+  code: string;
+  collapsibles: IStyleguideCollapsible[];
+}
+
+export interface IStyleguideButton {
+  theme: string;
+  label: string;
+  disabled: boolean;
+  code: string;
+  icon?: string;
+}
+
 export interface IStyleguideColor {
   name: string;
   hex: string;
