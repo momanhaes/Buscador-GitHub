@@ -46,6 +46,12 @@ export interface IStyleguideIcon {
   isLoading?: boolean;
 }
 
+export interface IStyleguideCountryIcon {
+  name: string;
+  icon: string;
+  code: string;
+}
+
 export interface IStyleguideInput {
   name: string;
   code: string;
