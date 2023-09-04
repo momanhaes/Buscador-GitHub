@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { APPEARD } from '../shared/animations/appeard.animation';
-import { IContent, STYLEGUIDE_CONTENT } from './styleguide.content';
 import { LIST_ANIMATION_LATERAL } from '../shared/animations/list.animation';
+import { IStyleguideRoute } from '../shared/interfaces/styleguide.interface';
 import { WindowService } from '../shared/services/window.service';
-import { Subscription } from 'rxjs';
+import { ROUTES } from './styleguide.content';
 
 @Component({
   selector: 'app-styleguide',
@@ -12,19 +12,17 @@ import { Subscription } from 'rxjs';
   animations: [APPEARD, LIST_ANIMATION_LATERAL],
 })
 export class StyleguideComponent implements OnInit {
-  public subscribeMobile!: Subscription;
-  public isMobile!: boolean;
-  public state = 'ready';
+  public routes: IStyleguideRoute[] = ROUTES;
+  public state: string = 'ready';
+  public show: boolean = false;
+  public isMobile: boolean;
 
   constructor(private windowService: WindowService) {
     this.isMobile = window.innerWidth <= windowService.widthMobile;
   }
 
-  public get content(): IContent[] {
-    return STYLEGUIDE_CONTENT;
-  }
-
   ngOnInit() {
-    this.subscribeMobile = this.windowService.isMobile.subscribe((isMobile: boolean) => (this.isMobile = isMobile));
+    setTimeout(() => { this.show = true; }, 0);
+    this.windowService.isMobile.subscribe((isMobile: boolean) => (this.isMobile = isMobile));
   }
 }

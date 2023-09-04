@@ -9,7 +9,8 @@ table {
 }
 
 mat-paginator {
-  background-color: $color-background !important; 
+  background-color: $color-background !important;
+  margin-top: 1rem;
 }
 
 .full-width-table {
@@ -24,8 +25,35 @@ mat-paginator {
     }
   }
 
+  .mat-mdc-row {
+    &:hover {
+      background-color: $color-secondary-bg !important;
+    }
+  }
+
+  .mat-column-id {
+    width: 5%;
+  }
+
   .mat-column-name {
     width: 25%;
+  }
+
+  .mat-column-email {
+    width: 30%;
+  }
+
+  .mat-column-state {
+    width: 10%;
+  }
+
+  .mat-column-cel {
+    width: 25%;
+  }
+
+  .mat-column-edit {
+    width: 5%;
+    cursor: pointer;
   }
 
   .mat-column-description {
@@ -44,5 +72,13 @@ mat-paginator {
   .mat-column-url {
     width: 5%;
     cursor: pointer;
+  }
+
+  .cursor-default {
+    cursor: default;
+  }
+
+  .font-bold {
+    font-weight: bold;
   }
 }

@@ -6,7 +6,7 @@
         <div class="menu">
           <button 
             [matMenuTriggerFor]="menu" 
-            matTooltipPosition="left" 
+            matTooltipPosition="right" 
             matTooltip="Menu" 
             color="basic"
             mat-mini-fab>
@@ -15,19 +15,36 @@
           </button>
 
           <mat-menu #menu="matMenu">
-            <ng-container *ngFor="let item of content">
-              <button mat-menu-item [routerLink]="item.route" class="button-menu">
-                <i [class]="item.icon"></i>
+            <ng-container *ngFor="let item of routes">
+              <button 
+                [matMenuTriggerFor]="item.children ? children : null" 
+                [routerLink]="item.route ? item.route : null" 
+                class="button-menu"
+                mat-menu-item>
+
+                <mat-icon>{{ item.icon }}</mat-icon>
                 <span>{{ item.label }}</span>
               </button>
+
+              <mat-menu #children="matMenu">
+                <button 
+                  *ngFor="let child of item.children" 
+                  (click)="goTo(child.route, child.isExternal)" 
+                  class="button-menu"
+                  mat-menu-item>
+
+                  <mat-icon>{{ child.icon }}</mat-icon>
+                  <span>{{ child.label }}</span>
+                </button>
+              </mat-menu>
             </ng-container>
           </mat-menu>
         </div>
 
         <button 
-          [matTooltip]="themeTooltip()" 
+          [matTooltip]="toggleTooltip()" 
           matTooltipPosition="left" 
-          (click)="toggle()"
+          (click)="toggleTheme()"
           color="basic"
           mat-mini-fab>
 

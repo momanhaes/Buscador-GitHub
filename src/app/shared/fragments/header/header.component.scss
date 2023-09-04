@@ -1,37 +1,35 @@
 @import "/src/app/scss/includes.scss";
 
 .root {
-  @include z-index("universe");
-  position: fixed;
-  width: 100%;
-
-  .nav {
     @include z-index("universe");
-    background: $color-background;
-    box-shadow: 0 1px 15px $color-shadow;
-    height: 65px;
+    position: fixed;
+    width: 100%;
 
-    .content {
-      @include between;
-      margin: 12px 0;
+    .nav {
+        height: 65px;
+        background: $color-background;
+        box-shadow: 0 1px 15px $color-shadow;
 
-      @include large-and-up {
-        margin: 12px;
-      }
+        .content {
+            @include between;
+            margin: 12px 0;
 
-      .menu {
-        @include start;
-        font-family: $font-montserrat !important;
+            @include large-and-up {
+                margin: 12px;
+            }
 
-        .button-menu {
-          @include start;
+            .menu {
+                @include start;
+
+                .button-menu {
+                    @include start;
+                }
+            }
         }
-      }
     }
-  }
 
-  .highlight {
-    color: $color-primary;
-    font-weight: bold;
-  }
+    .highlight {
+        color: $color-primary;
+        font-weight: bold;
+    }
 }

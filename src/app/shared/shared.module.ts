@@ -7,11 +7,14 @@ import { FragmentsModule } from './fragments/fragments.module';
 
 // SERVICES
 import { WindowService } from './services/window.service';
-import { GithubService } from './services/github.service';
-import { CollapsibleService } from './services/collapsible.service';
+import { CustomerService } from './services/customer.service';
 import { NotificationService } from './services/notification.service';
 import { LocalStorageService } from './services/local-storage.service';
-import { SessionStorageService } from './services/session-storage.service';
+import { CalculatorService } from './services/calculator.service';
+import { GithubService } from './services/github.service';
+import { CEPService } from './services/cep.service';
+import { FormatterLib } from './lib/formatter.lib';
+import { HelperLib } from './lib/helper.lib';
 
 const MODULES = [
   ComponentsModule,
@@ -20,11 +23,14 @@ const MODULES = [
 
 const SERVICES = [
   LocalStorageService,
-  SessionStorageService,
   NotificationService,
-  CollapsibleService,
+  CalculatorService,
+  CustomerService,
   WindowService,
-  GithubService
+  GithubService,
+  FormatterLib,
+  CEPService,
+  HelperLib,
 ];
 
 @NgModule({

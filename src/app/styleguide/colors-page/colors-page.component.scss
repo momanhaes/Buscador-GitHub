@@ -3,7 +3,7 @@
 .root {
     @include grid(32);
 
-    .container {
+    .container-fluid {
         @include grid-column-span(32);
         margin-bottom: 32px;
         margin-top: 32px;
@@ -22,7 +22,7 @@
                 .title {
                     font-weight: bold;
                     color: $color-primary !important;
-                    border-bottom: 1px solid $color-bar;
+                    border-bottom: 1px solid $color-border;
 
                     p {
                         margin-bottom: 1rem;
@@ -32,18 +32,6 @@
 
             @include large-and-down {
                 padding: 32px;
-            }
-
-            i {
-                font-size: 18px;
-            }
-
-            pre {
-                margin: 12px 0 0 0;
-                white-space: inherit;
-                background: $color-grey-bg;
-                padding: 15px;
-                border-radius: 3px;
             }
         }
 
@@ -91,6 +79,14 @@
 
                 &.color-primary-hover {
                     background-color: $color-primary-hover;
+                }
+
+                &.color-secondary-bg {
+                    background-color: $color-secondary-bg;
+                }
+
+                &.color-background {
+                    background-color: $color-background;
                 }
 
                 &.color-white {

@@ -3,33 +3,17 @@
 @import "app/scss/includes.scss";
 @import "@angular/material/theming";
 
-@include mat.all-component-typographies();
-@include mat.core();
-
-$primary: mat.define-palette(mat.$blue-palette);
 $accent: mat.define-palette(mat.$blue-grey-palette, A100);
+$primary: mat.define-palette(mat.$blue-palette);
 $warn: mat.define-palette(mat.$red-palette);
-$theme: mat.define-light-theme(
-  (
-    color: (
-      primary: $primary,
-      accent: $accent,
-      warn: $warn,
-    ),
-  )
-);
 
-$dark-theme: mat.define-dark-theme(
-  (
-    color: (
-      primary: $primary,
-      accent: $accent,
-      warn: $warn,
-    ),
-  )
-);
+$light-theme: mat.define-light-theme((color: (primary: $primary, accent: $accent, warn: $warn)));
+$dark-theme: mat.define-dark-theme((color: (primary: $primary, accent: $accent, warn: $warn)));
+$typography: mat-typography-config($font-family: '"Montserrat", sans-serif;');
 
-@include mat.all-component-themes($theme);
+@include mat.core();
+@include mat.all-component-themes($light-theme);
+@include mat.all-component-typographies($typography);
 
 .dark-theme {
   @include mat.all-component-colors($dark-theme);
@@ -59,13 +43,11 @@ figure,
 hr {
   margin: 0;
   padding: 0;
-  color: $color-text !important;
-  font-family: $font-montserrat !important;
+  color: $color-text;
 }
 
 p {
-  font-family: $font-montserrat !important;
-  color: $color-text !important;
+  color: $color-text;
   line-height: 1.25;
   font-size: 1rem;
   padding: 0;
@@ -74,8 +56,7 @@ p {
 
 html,
 body {
-  background-color: $color-background !important;
-  font-family: $font-montserrat !important;
+  background-color: $color-background;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
   line-height: 1.25;
@@ -88,12 +69,12 @@ body {
   }
 
   &::-webkit-scrollbar-track {
-    background: $color-grey-bg;
+    background: $color-background;
   }
 
   &::-webkit-scrollbar-thumb {
     background-color: $color-primary;
-    border: 3px solid $color-grey-bg;
+    border: 3px solid $color-background;
     border-radius: 20px;
   }
 }
@@ -112,60 +93,26 @@ img {
 }
 
 a {
-  color: $color-text !important;
-  text-decoration: none !important;
-  transition: transform 0.1s;
-  transform: scale(1);
-
-  &:hover {
-    transform: scale(1.1);
-  }
+  color: $color-text;
+  text-decoration: none;
 }
 
 .color-primary {
-  color: $color-primary !important;
-}
-
-.spinner-center-page {
-  position: absolute;
-  left: 50%;
-  top: 50%;
+  color: $color-primary;
 }
 
 .cdk-overlay-container {
-  z-index: 10000 !important;
+  @include z-index("universe");
+}
+
+.cdk-overlay-backdrop {
+  backdrop-filter: blur(8px);
 }
 
 .mat-mdc-menu-content {
-  background-color: $color-background !important;
-
-  button {
-    span {
-      font-family: $font-montserrat !important;
-    }
-
-    i {
-      margin-right: 12px;
-      font-size: 18px;
-    }
-  }
+  background-color: $color-background;
 }
 
-.swal2-title {
-  color: $color-black !important;
-}
-
-.swal2-html-container {
-  color: $color-black !important;
-}
-
-.swal2-popup .swal2-styled {
-  &:focus {
-    box-shadow: none !important;
-  }
-}
-
-.swal2-container.swal2-center.swal2-backdrop-show {
-  @include z-index("universe");
-  backdrop-filter: blur(15px);
+.mat-mdc-menu-submenu-icon {
+  display: none;
 }

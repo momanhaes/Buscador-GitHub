@@ -1,14 +1,14 @@
 <div class="root" [@appeard]="state">
-  <div class="container">
+  <div class="container-fluid">
     <div class="content">
 
       <div class="text">
         <h1 class="title">Inputs</h1>
-        <p>Abaixo os inputs</p>
+        <p>Abaixo exemplos de inputs</p>
       </div>
 
-      <div class="row" *ngIf="show" [@listAnimation]="inputs.length">
-        <div class="col-6 mb-3" *ngFor="let item of inputs">
+      <div class="row" *ngIf="show" [@list]="content.length">
+        <div class="col-12 col-md-6 mb-3" *ngFor="let item of content">
 
           <ng-container *ngIf="!item.isSearch">
             <div class="label">{{ item.name }}</div>
@@ -16,7 +16,8 @@
             <app-input 
               [form]="form" 
               [type]="item.type" 
-              [label]="item.label" 
+              [label]="item.label"
+              [mask]="item.mask" 
               [control]="item.control" 
               [required]="item.required"
               [disabled]="item.disabled"
@@ -24,14 +25,14 @@
             </app-input>
 
             <pre>
-              {{ item.code }}
+              <span>{{ item.code }}</span>
 
-              <i 
-                class="fa fa-clone" 
-                (click)="clip(item.code)"
-                matTooltipPosition="above" 
-                matTooltip="Clique para copiar">
-              </i>
+                <mat-icon 
+                  (click)="clip(item.code)" 
+                  matTooltipPosition="above" 
+                  matTooltip="Clique para copiar">
+                  content_copy
+                </mat-icon>
             </pre>
           </ng-container>
 
@@ -39,7 +40,7 @@
             <div class="label">{{ item.name }}</div>
 
             <div class="search">
-              <i class="fa fa-search me-3"></i>
+              <mat-icon>person_search</mat-icon>
     
               <app-input 
                 [form]="form" 
@@ -52,19 +53,39 @@
               </app-input>
             </div>
 
-            <p *ngIf="searchText">Pesquisando por '{{ searchText }}'</p>
+            <p class="search-text" *ngIf="form.value?.search">Pesquisando por '{{ form.value.search }}'</p>
 
             <pre>
-              {{ item.code }}
+              <span>{{ item.code }}</span>
 
-              <i 
-                class="fa fa-clone" 
-                (click)="clip(item.code)"
+              <mat-icon 
+                (click)="clip(item.code)" 
                 matTooltipPosition="above" 
                 matTooltip="Clique para copiar">
-              </i>
+                content_copy
+              </mat-icon>
             </pre>
           </ng-container>
+        </div>
+
+        <div class="col-12" [@appeard]="state">
+          <div class="label">CEP</div>
+          <app-cep [form]="form" [required]="false" (input)="cleanCep($event)" (addressByCepEvent)="getAddress($event)"></app-cep>
+
+          <pre *ngIf="cep.cep && form.value.cep">
+            {{ cep | json }}
+          </pre>
+
+          <pre>
+            <span>{{ cepCode }}</span>
+
+            <mat-icon 
+              (click)="clip(cepCode)" 
+              matTooltipPosition="above" 
+              matTooltip="Clique para copiar">
+              content_copy
+            </mat-icon>
+          </pre>
         </div>
       </div>
 

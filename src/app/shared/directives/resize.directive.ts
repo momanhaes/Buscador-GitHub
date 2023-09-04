@@ -13,4 +13,3 @@ export class ResizeDirective {
     this.win.isMobile.emit(target.innerWidth <= this.win.widthMobile);
   }
 }
- 

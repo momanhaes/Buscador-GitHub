@@ -5,9 +5,34 @@
   margin-top: 1rem;
   margin-bottom: 2rem;
   padding-bottom: 1rem;
+  background-color: $color-background;
   border-bottom: 1px solid $color-primary;
 
-  .name {
+  .customer-name {
+    @include grid-column-span(28);
+  }
+
+  .edit {
+    @include grid-column-span(4);
+  }
+
+  .email {
+    @include grid-column-span(20);
+  }
+
+  .cpf {
+    @include grid-column-span(12);
+  }
+
+  .cel {
+    @include grid-column-span(20);
+  }
+
+  .state {
+    @include grid-column-span(12);
+  }
+
+  .repo-name {
     @include grid-column-span(32);
   }
 

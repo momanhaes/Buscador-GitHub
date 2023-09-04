@@ -1,29 +1,31 @@
 <div class="root" [@appeard]="state">
-  <div class="container">
+  <div class="container-fluid">
     <div class="content">
 
       <div class="text">
         <h1 class="title">Ícones</h1>
-        <p>Abaixo os ícones</p>
+        <p>Abaixo exemplos de ícones</p>
       </div>
 
-      <div class="row" *ngIf="show" [@listAnimation]="icons.length">
-        <ng-container *ngFor="let item of icons">
-          <div class="col-6" *ngIf="item.isLoading">
+      <div class="row" *ngIf="show" [@list]="content.length">
+        <ng-container *ngFor="let item of content">
+          <div class="col-12 col-md-6" *ngIf="item.isLoading">
             <div class="item">
               <app-spinner [label]="item.label ? item.label : ''" [size]="1.3"></app-spinner>
               <div *ngIf="item.name" class="label loading">{{ item.name }}</div>
             </div>
 
             <pre>
-              {{ item.code }}
-
-              <i 
-                class="fa fa-clone"
-                (click)="clip(item.code)"
+              <span>
+                {{ item.code }}
+              </span>
+  
+              <mat-icon 
+                (click)="clip(item.code)" 
                 matTooltipPosition="above" 
                 matTooltip="Clique para copiar">
-              </i>
+                content_copy
+              </mat-icon>
             </pre>
           </div>
         </ng-container>
@@ -31,48 +33,28 @@
 
       <div class="bar"></div>
 
-      <div class="row" *ngIf="show" [@listAnimation]="icons.length">
-        <ng-container *ngFor="let item of icons">
-          <div class="col-4" *ngIf="!item.isLoading">
+      <div class="row" *ngIf="show" [@list]="content.length">
+        <ng-container *ngFor="let item of content">
+          <div class="col-12 col-md-4" *ngIf="!item.isLoading">
             <div class="item">
-              <i [class]="item.class"></i>
+              <mat-icon>{{ item.id }}</mat-icon>
               <div class="label">{{ item.name }}</div>
             </div>
 
             <pre>
-              {{ item.code }}
-
-              <i 
-                class="fa fa-clone"
-                (click)="clip(item.code)"
+              <span>
+                {{ item.code }}
+              </span>
+  
+              <mat-icon 
+                (click)="clip(item.code)" 
                 matTooltipPosition="above" 
                 matTooltip="Clique para copiar">
-              </i>
+                content_copy
+              </mat-icon>
             </pre>
           </div>
         </ng-container>
-      </div>
-
-      <div class="bar"></div>
-
-      <div class="row" *ngIf="show" [@listAnimation]="countries.length">
-        <div class="col-6" *ngFor="let item of countries">
-          <div class="item">
-            <img [src]="item.icon">
-            <div class="label">{{ item.name }}</div>
-          </div>
-
-          <pre>
-            {{ item.code }}
-
-            <i 
-              class="fa fa-clone"
-              (click)="clip(item.code)"
-              matTooltipPosition="above" 
-              matTooltip="Clique para copiar">
-            </i>
-          </pre>
-        </div>
       </div>
 
     </div>

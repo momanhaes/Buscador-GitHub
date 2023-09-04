@@ -11,9 +11,13 @@ import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 
 // PAGES
-import { HomeComponent } from './pages/home/home.component';
-import { GitHubSearchComponent } from './pages/gh-search/gh-search.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { GitHubSearchComponent } from './gh-search/gh-search.component';
+import { CalculatorComponent } from './calculator/calculator.component';
+import { ExperienceComponent } from './experience/experience.component';
+import { EducationComponent } from './education/education.component';
+import { AwardsComponent } from './awards/awards.component';
 
 // COMPONENTS
 import { AppComponent } from './app.component';
@@ -34,13 +38,17 @@ const INTERNAL_MODULES = [
 
 const PAGES = [
   HomeComponent,
+  NotFoundComponent,
   GitHubSearchComponent,
-  NotFoundComponent
+  CalculatorComponent,
+  AwardsComponent,
+  EducationComponent,
+  ExperienceComponent
 ];
 
 const COMPONENTS = [
   AppComponent
-]; 
+];
 
 const SERVICES = [
   { provide: LOCALE_ID, useValue: 'pt' }
@@ -52,7 +60,7 @@ const SERVICES = [
     ...INTERNAL_MODULES
   ],
   declarations: [
-    ...COMPONENTS, 
+    ...COMPONENTS,
     ...PAGES
   ],
   providers: [
@@ -62,4 +70,4 @@ const SERVICES = [
     AppComponent
   ],
 })
-export class AppModule {}
+export class AppModule { }

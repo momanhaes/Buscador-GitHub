@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { WindowService } from '../../services/window.service';
 import { APPEARD } from 'src/app/shared/animations/appeard.animation';
-import { LIST_ANIMATION_LATERAL } from 'src/app/shared/animations/list.animation';
 import { KeyType, LocalStorageService } from '../../services/local-storage.service';
-import { ETema, HEADER_CONTENT, IContent } from './header.content';
-import { Subscription } from 'rxjs';
+import { LIST_ANIMATION_LATERAL } from 'src/app/shared/animations/list.animation';
+import { ETema, IHeaderRoute } from '../../interfaces/shared.interface';
+import { HEADER_ROUTES } from '../../shared.content';
+import { HelperLib } from '../../lib/helper.lib';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -14,46 +15,34 @@ import { Subscription } from 'rxjs';
 })
 export class HeaderComponent implements OnInit {
   public themeIcon: { icon: string; label: string };
-  public content: IContent[] = HEADER_CONTENT;
-  public subscribeMobile!: Subscription;
-  public isMobile: boolean;
-  public state = 'ready';
+  public routes: IHeaderRoute[] = HEADER_ROUTES;
+  public state: string = 'ready';
 
-  constructor(
-    private windowService: WindowService,
-    private localStorageService: LocalStorageService
-  ) {
-    this.isMobile = window.innerWidth <= windowService.widthMobile;
+  constructor(private localStorageService: LocalStorageService, private router: Router, private helper: HelperLib) {
     this.themeIcon = { icon: 'light_mode', label: ETema.LIGHT };
   }
 
-  ngOnInit() {
-    this.subscribeMobile = this.windowService.isMobile.subscribe((isMobile: boolean) => (this.isMobile = isMobile));
-    this.verifyTheme();
-  }
+  public ngOnInit(): void {
+    if (!this.localStorageService.has(KeyType.TEMA)) { return; }
 
-  public hasTheme(): boolean {
-    return this.localStorageService.has(KeyType.TEMA);
-  }
-
-  public verifyTheme() {
-    if (!this.hasTheme()) { return; }
-
-    const tema = this.localStorageService.get(KeyType.TEMA);
-    this.themeIcon = tema;
+    this.themeIcon = this.localStorageService.get(KeyType.TEMA);
 
     if (this.themeIcon.label === ETema.DARK) {
       document.body.classList.add('dark-theme');
     }
   }
 
-  public themeTooltip(): string {
+  public toggleTooltip(): string {
     return this.themeIcon.label === ETema.LIGHT ? 'Mudar para tema escuro' : 'Mudar para tema claro';
   }
 
-  public toggle() {
+  public toggleTheme(): void {
     document.body.classList.toggle('dark-theme');
     this.themeIcon = this.themeIcon.label === ETema.LIGHT ? { icon: 'dark_mode', label: ETema.DARK } : { icon: 'light_mode', label: ETema.LIGHT };
     this.localStorageService.set(KeyType.TEMA, this.themeIcon);
+  }
+
+  public goTo(url: string, isExternal: boolean): void {
+    isExternal ? this.helper.goTo(url) : this.router.navigate([url]);
   }
 }

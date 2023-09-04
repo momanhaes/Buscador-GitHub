@@ -3,14 +3,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mmanhaes": {
+    "portal-mmanhaes": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
-        },
-        "@schematics/angular:application": {
-          "strict": true
         }
       },
       "root": "",
@@ -20,15 +17,12 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "allowedCommonJsDependencies": [
-              "sweetalert2"
-           ],
-            "outputPath": "dist/mmanhaes",
+            "outputPath": "dist/portal-mmanhaes",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets",
@@ -39,27 +33,13 @@
               }
             ],
             "styles": [
-              "src/styles.scss",
-              "./node_modules/bootstrap/scss/bootstrap.scss",
-              "./node_modules/font-awesome/scss/font-awesome.scss"
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "src/styles.scss"
             ],
             "scripts": []
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -71,25 +51,36 @@
                   "maximumWarning": "2kb",
                   "maximumError": "4kb"
                 }
-              ]
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "mmanhaes:build"
-          },
           "configurations": {
             "production": {
-              "browserTarget": "mmanhaes:build:production"
+              "browserTarget": "portal-mmanhaes:build:production"
+            },
+            "development": {
+              "browserTarget": "portal-mmanhaes:build:development"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mmanhaes:build"
+            "browserTarget": "portal-mmanhaes:build"
           }
         },
         "test": {
@@ -99,14 +90,11 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "inlineStyleLanguage": "scss",
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-              "src/styles.scss",
-              "./node_modules/bootstrap/scss/bootstrap.scss",
-              "./node_modules/font-awesome/scss/font-awesome.scss"
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -115,6 +103,6 @@
     }
   },
   "cli": {
-    "analytics": "1895cdef-2ee1-4221-86b6-072bb899d28d"
+    "analytics": "3c912bf4-9029-4088-b0f2-8aeb30cd433f"
   }
 }

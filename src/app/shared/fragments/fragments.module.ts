@@ -29,7 +29,7 @@ const FRAGMENTS = [
   TableComponent,
   HeaderComponent,
   FooterComponent,
-  ProfileComponent,
+  ProfileComponent
 ]; 
 
 @NgModule({

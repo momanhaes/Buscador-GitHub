@@ -1,8 +1,8 @@
-import { Subscription } from 'rxjs';
-import { IProfile } from './profile.interface';
+import { IProfile } from '../../interfaces/profile.interface';
 import { APPEARD } from 'src/app/shared/animations/appeard.animation';
 import { WindowService } from '../../services/window.service';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { HelperLib } from '../../lib/helper.lib';
 
 @Component({
   selector: 'app-profile',
@@ -16,26 +16,17 @@ export class ProfileComponent implements OnInit {
   @Input() public profile!: IProfile;
   @Input() public isLoading: boolean = false;
   
-  public state = 'ready';
+  public state: string = 'ready';
   public isMobile: boolean;  
-  public subscribeMobile!: Subscription;
 
-  constructor(private windowService: WindowService) { this.isMobile = window.innerWidth <= windowService.widthMobile; }
+  constructor(private windowService: WindowService, private helper: HelperLib) { this.isMobile = window.innerWidth <= windowService.widthMobile; }
 
   ngOnInit() {
-    this.subscribeMobile = this.windowService.isMobile.subscribe((isMobile: boolean) => (this.isMobile = isMobile));
+    this.windowService.isMobile.subscribe((isMobile: boolean) => (this.isMobile = isMobile));
   }
 
   public goTo(url: string): void {
-    let URL: string = '';
-    
-    if (!/^http[s]?:\/\//.test(url)) {
-        URL += 'http://';
-    }
-
-    URL += url;
-
-    window.open(URL, '_blank');
+    this.helper.goTo(url);
   }
 
   public goTwitter(username: string): void {

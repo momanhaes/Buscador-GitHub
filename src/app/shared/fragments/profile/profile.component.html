@@ -2,27 +2,27 @@
   <ng-container *ngIf="profile">
     <div class="profile" *ngIf="!isMobile">
       <p *ngIf="profile.location">
-        <i class="fa fa-map-marker" matTooltipPosition="left" matTooltip="Localização"></i>
+        <mat-icon matTooltipPosition="left" matTooltip="Localização">location_on</mat-icon>
         {{ profile.location }}
       </p>
 
       <p *ngIf="profile.company">
-        <i class="fa fa-building-o" matTooltipPosition="left" matTooltip="Empresa"></i>
+        <mat-icon matTooltipPosition="left" matTooltip="Empresa">apartment</mat-icon>
         {{ profile.company }}
       </p>
 
       <p *ngIf="profile.blog" (click)="goTo(profile.blog)" class="link">
-        <i class="fa fa-link" matTooltipPosition="left" matTooltip="Link"></i>
+        <mat-icon matTooltipPosition="left" matTooltip="Link">rss_feed</mat-icon>
         {{ profile.blog }}
       </p>
 
       <p *ngIf="profile.email">
-        <i class="fa fa-envelope-o" matTooltipPosition="left" matTooltip="Email"></i>
+        <mat-icon matTooltipPosition="left" matTooltip="Email">mail</mat-icon>
         {{ profile.email }}
       </p>
 
       <p *ngIf="profile.twitter_username" (click)="goTwitter(profile.twitter_username)" class="link">
-        <i class="fa fa-twitter" matTooltipPosition="left" matTooltip="Twitter"></i>
+        <mat-icon matTooltipPosition="left" matTooltip="Twitter">public</mat-icon>
         @{{profile.twitter_username }}
       </p>
     </div>
@@ -39,16 +39,19 @@
 
       <div class="principal">
         <h3 *ngIf="profile.followers">
-          <i class="fa fa-users" matTooltip="{{ profile.followers > 1 ? profile.followers + ' Seguidores' : profile.followers + ' Seguidor' }}"></i>
+          <mat-icon matTooltip="{{ profile.followers > 1 ? profile.followers + ' Seguidores' : profile.followers + ' Seguidor' }}">group</mat-icon>
           {{ profile.followers }}
         </h3>
 
         <h3 *ngIf="profile.following">
-          <i class="fa fa-user" matTooltip="{{ profile.following + ' Seguindo' }}"></i>
+          <mat-icon matTooltip="{{ profile.following + ' Seguindo' }}">person</mat-icon>
           {{ profile.following }}
         </h3>
 
-        <h3 *ngIf="profile.login"><i class="fa fa-user-circle-o" matTooltip="Usuário"></i> {{ profile.login }}</h3>
+        <h3 *ngIf="profile.login">
+          <mat-icon matTooltip="Usuário">account_circle</mat-icon>
+          {{ profile.login }}
+        </h3>
       </div>
 
       <div class="secondary">
@@ -59,7 +62,7 @@
         <app-button 
           *ngIf="profile.html_url" 
           [class.me-3]="!isMobile" theme="{{ isMobile ? 'outline' : 'primary' }}" 
-          icon="fa fa-github-alt" 
+          icon="person" 
           label="Ver Perfil" 
           (click)="goTo(profile.html_url)">
         </app-button>
@@ -67,7 +70,7 @@
         <app-button 
           *ngIf="profile.login && !isLoading" 
           theme="{{ isMobile ? 'outline' : 'primary' }}"
-          icon="fa fa-code-fork"
+          icon="code"
           id="button-repos" 
           label="Ver Repositórios" 
           (click)="goRepos(profile.login)">

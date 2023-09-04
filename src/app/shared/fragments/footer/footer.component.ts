@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { APPEARD } from 'src/app/shared/animations/appeard.animation';
 
 @Component({
@@ -7,12 +7,6 @@ import { APPEARD } from 'src/app/shared/animations/appeard.animation';
   styleUrls: ['./footer.component.scss'],
   animations: [APPEARD],
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent {
   public state = 'ready';
-  
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

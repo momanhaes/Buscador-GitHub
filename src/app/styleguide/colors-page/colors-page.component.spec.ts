@@ -1,73 +1,58 @@
+import { IStyleguideColor } from 'src/app/shared/interfaces/styleguide.interface';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StyleguideService } from '../../shared/services/styleguide.service';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ColorsPageComponent } from './colors-page.component';
-import { COLORS, IColor } from './colors-page.content';
+import { StyleguideModule } from '../styleguide.module';
+import { COLORS } from '../styleguide.content';
 
 describe('ColorsPageComponent', () => {
   let component: ColorsPageComponent;
   let fixture: ComponentFixture<ColorsPageComponent>;
+  let styleguideService: StyleguideService;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [BrowserAnimationsModule],
-      declarations: [ColorsPageComponent]
-    })
-      .compileComponents();
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [BrowserAnimationsModule, StyleguideModule],
+      declarations: [ColorsPageComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ColorsPageComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    styleguideService = TestBed.inject(StyleguideService);
+    spyOn(styleguideService, 'clipColor');
   });
 
   it('Deve criar o componente', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Deve ser um array', () => {
-    expect(Array.isArray(COLORS)).toBe(true);
+  it('Deve inicializar o "content"', () => {
+    fixture.detectChanges();
+    expect(component.content).toEqual(COLORS);
   });
 
-  it('Cada objeto deve ter uma propriedade "name"', () => {
-    COLORS.forEach((color: IColor) => {
-      expect(color.name).toBeDefined();
-    });
+  it('Deve setar "show" para "true" depois do timeout', () => {
+    jasmine.clock().install();
+    fixture.detectChanges();
+    expect(component.show).toBeUndefined();
+    jasmine.clock().tick(1);
+    expect(component.show).toBe(true);
+    jasmine.clock().uninstall();
   });
 
-  it('Cada objeto deve ter uma propriedade "hex"', () => {
-    COLORS.forEach((color: IColor) => {
-      expect(color.hex).toBeDefined();
-    });
+  it('Deve chamar styleguideService.clipColor() com o código fornecido', () => {
+    const color: IStyleguideColor = {
+      name: 'Primary',
+      hex: '#1da1f2',
+    };
+    component.clip(color);
+    expect(styleguideService.clipColor).toHaveBeenCalledWith(color);
   });
 
-  it('Cada objeto deve ter uma propriedade "name" com o formato "color-*"', () => {
-    COLORS.forEach((color: IColor) => {
-      expect(color.name).toMatch(/^color-.*/);
-    });
-  });
-
-  it('Cada objeto deve ter uma propriedade "hex" com o formato "#******"', () => {
-    COLORS.forEach((color: IColor) => {
-      expect(color.hex).toMatch(/^#[0-9A-F]{6}$/i);
-    });
-  });
-
-  it('Deve haver um objeto com o nome "color-primary"', () => {
-    expect(COLORS.some((color: IColor) => color.name === 'color-primary')).toBe(true);
-  });
-
-  it('Deve haver um objeto com o nome "color-secondary"', () => {
-    expect(COLORS.some((color: IColor) => color.name === 'color-secondary')).toBe(true);
-  });
-
-  it('Deve haver um objeto com o nome "color-terciery"', () => {
-    expect(COLORS.some((color: IColor) => color.name === 'color-terciery')).toBe(true);
-  });
-
-  it('Deve haver um objeto com o nome "color-white"', () => {
-    expect(COLORS.some((color: IColor) => color.name === 'color-white')).toBe(true);
-  });
-
-  it('Deve haver um objeto com o nome "color-black"', () => {
-    expect(COLORS.some((color: IColor) => color.name === 'color-black')).toBe(true);
+  afterEach(() => {
+    if (fixture) {
+      fixture.destroy();
+    }
   });
 });

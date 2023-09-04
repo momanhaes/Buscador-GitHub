@@ -3,7 +3,7 @@
 .root {
     @include grid(32);
 
-    .container {
+    .container-fluid {
         @include grid-column-span(32);
         margin-bottom: 32px;
         margin-top: 32px;
@@ -22,7 +22,7 @@
                 .title {
                     font-weight: bold;
                     color: $color-primary !important;
-                    border-bottom: 1px solid $color-bar;
+                    border-bottom: 1px solid $color-border;
                 }
             }
 
@@ -30,24 +30,23 @@
                 padding: 32px;
             }
 
-            i {
-                font-size: 18px;
-                color: $color-primary !important;
-            }
-
-            .fa-clone {
+            mat-icon {
                 cursor: pointer;
-                font-size: 16px;
                 margin-left: 12px;
+                color: $color-primary !important;
             }
 
             pre {
                 @include between;
                 margin: 12px 0 12px 0;
                 white-space: inherit;
-                background: $color-grey-bg;
+                background: $color-secondary-bg;
                 padding: 15px;
                 border-radius: 3px;
+
+                mat-icon {
+                    overflow: visible;
+                }
             }
         }
     }

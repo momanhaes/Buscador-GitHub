@@ -3,11 +3,10 @@ import {
   ChangeDetectorRef,
   Component,
   Input,
-  OnInit,
 } from '@angular/core';
 import { UntypedFormGroup } from '@angular/forms';
-import { debounceTime } from 'rxjs/operators';
 import { APPEARD } from 'src/app/shared/animations/appeard.animation';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-input',
@@ -15,37 +14,31 @@ import { APPEARD } from 'src/app/shared/animations/appeard.animation';
   styleUrls: ['./input.component.scss'],
   animations: [APPEARD],
 })
-export class InputComponent implements OnInit, AfterViewInit {
-  public isRequiredError: boolean;
-  public isEmailError: boolean;
-  public hasError: boolean;
-  public state = 'ready';
+export class InputComponent implements AfterViewInit {
+  public isRequiredError: boolean = false;
+  public isEmailError: boolean = false;
+  public hasError: boolean = false;
+  public state: string = 'ready';
 
   @Input() form!: UntypedFormGroup;
-  @Input() required: boolean;
-  @Input() disabled: boolean;
-  @Input() type!: string;
-  @Input() label!: string;
-  @Input() control!: string;
-  @Input() placeholder!: string;
+  @Input() required: boolean = false;
+  @Input() disabled: boolean = false;
+  @Input() placeholder: string = '';
+  @Input() type: string = 'text';
+  @Input() control: string = '';
+  @Input() label: string = '';
+  @Input() mask: string = '';
 
-  constructor(private cdr: ChangeDetectorRef) {
-    this.isRequiredError = false;
-    this.isEmailError = false;
-    this.hasError = false;
-    this.required = false;
-    this.disabled = false;
-  }
-
-  ngOnInit(): void {
-    if (this.disabled) { this.form.get(this.control)?.disable({ onlySelf: true, emitEvent: false }); }
-  }
+  constructor(private cdr: ChangeDetectorRef) {}
 
   ngAfterViewInit() {
+    if (this.disabled) { this.form.get(this.control)?.disable({ onlySelf: true, emitEvent: false }); }
+    this.cdr.detectChanges();
+
     this.form?.valueChanges.pipe(debounceTime(500)).subscribe(() => {
       this.hasError = this.form.get(this.control)?.errors && (this.form.get(this.control)?.dirty || this.form.get(this.control)?.touched) ? true : false;
-      this.isRequiredError = this.form.get(this.control)?.errors?.required;
-      this.isEmailError = this.form.get(this.control)?.errors?.pattern;
+      this.isRequiredError = this.form.get(this.control)?.errors?.['required'];
+      this.isEmailError = this.form.get(this.control)?.errors?.['pattern'];
       this.cdr.detectChanges();
     });
   }

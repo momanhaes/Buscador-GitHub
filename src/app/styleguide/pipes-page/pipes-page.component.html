@@ -1,14 +1,14 @@
 <div class="root" [@appeard]="state">
-  <div class="container">
+  <div class="container-fluid">
     <div class="content">
 
       <div class="text">
         <h1 class="title">Pipes</h1>
-        <p>Abaixo os pipes</p>
+        <p>Abaixo exemplos de pipes</p>
       </div>
 
-      <div class="row" *ngIf="show" [@listAnimation]="pipes.length">
-        <div class="col-4" *ngFor="let item of pipes">
+      <div class="row" *ngIf="show" [@list]="content.length">
+        <div class="col-12 col-md-4" *ngFor="let item of content">
           <h4 class="label">{{ item.name }}</h4>
 
           <div>
@@ -23,14 +23,16 @@
             <p *ngIf="item.type === 'tel'">{{ item.value | tel }}</p>
             
             <pre>
-              {{ item.usage }}
+              <span>
+                {{ item.usage }}
+              </span>
   
-              <i 
-                class="fa fa-clone"
-                (click)="clip(item.usage)"
+              <mat-icon 
+                (click)="clip(item.usage)" 
                 matTooltipPosition="above" 
                 matTooltip="Clique para copiar">
-              </i>
+                content_copy
+              </mat-icon>
             </pre>
           </div>
         </div>
