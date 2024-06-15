@@ -48,22 +48,22 @@ export const HEADER_ROUTES: IHeaderRoute[] = [
     isExternal: false,
   },
   {
-    route: '/experience',
+    route: 'https://mmanhaes.com.br/#experience',
     icon: 'work',
     label: 'Experiência',
-    isExternal: false,
+    isExternal: true,
   },
   {
-    route: '/education',
+    route: 'https://mmanhaes.com.br/#education',
     icon: 'school',
     label: 'Educação',
-    isExternal: false,
+    isExternal: true,
   },
   {
-    route: '/awards',
+    route: 'https://mmanhaes.com.br/#awards',
     icon: 'emoji_events',
     label: 'Premiações',
-    isExternal: false,
+    isExternal: true,
   },
 ];
 
