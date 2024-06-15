@@ -27,18 +27,18 @@ export const ROUTES: Routes = [
     path: 'gh-search',
     component: GitHubSearchComponent,
   },
-  {
-    path: 'experience',
-    component: ExperienceComponent,
-  },
-  {
-    path: 'education',
-    component: EducationComponent,
-  },
-  {
-    path: 'awards',
-    component: AwardsComponent,
-  },
+  // {
+  //   path: 'experience',
+  //   component: ExperienceComponent,
+  // },
+  // {
+  //   path: 'education',
+  //   component: EducationComponent,
+  // },
+  // {
+  //   path: 'awards',
+  //   component: AwardsComponent,
+  // },
   {
     path: 'customer',
     loadChildren: () => import('./customer/customer.module').then((x) => x.CustomerModule),
