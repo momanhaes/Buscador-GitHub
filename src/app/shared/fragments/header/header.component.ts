@@ -42,7 +42,8 @@ export class HeaderComponent implements OnInit {
     this.localStorageService.set(KeyType.TEMA, this.themeIcon);
   }
 
-  public goTo(url: string, isExternal: boolean): void {
-    isExternal ? this.helper.goTo(url) : this.router.navigate([url]);
+  public goTo(headerRoute: IHeaderRoute): void {
+    if (headerRoute.children) { return; }
+    headerRoute.isExternal ? this.helper.goTo(headerRoute.route) : this.router.navigate([headerRoute.route]);
   }
 }
