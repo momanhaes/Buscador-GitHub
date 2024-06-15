@@ -18,7 +18,7 @@
             <ng-container *ngFor="let item of routes">
               <button 
                 [matMenuTriggerFor]="item.children ? children : null" 
-                [routerLink]="item.route ? item.route : null" 
+                (click)="goTo(item)"
                 class="button-menu"
                 mat-menu-item>
 
@@ -29,7 +29,7 @@
               <mat-menu #children="matMenu">
                 <button 
                   *ngFor="let child of item.children" 
-                  (click)="goTo(child.route, child.isExternal)" 
+                  (click)="goTo(child)" 
                   class="button-menu"
                   mat-menu-item>
 
